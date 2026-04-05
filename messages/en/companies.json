@@ -1,0 +1,41 @@
+{
+  "title": "Companies",
+  "singular": "Company",
+  "plural": "Companies",
+  "createCompany": "New Company",
+  "editCompany": "Edit Company",
+  "fields": {
+    "name": "Company Name",
+    "domain": "Domain",
+    "industry": "Industry",
+    "size": "Company Size",
+    "revenue": "Annual Revenue",
+    "phone": "Phone",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "owner": "Owner",
+    "notes": "Notes",
+    "website": "Website",
+    "createdAt": "Created"
+  },
+  "sizes": {
+    "1_10": "1–10 employees",
+    "11_50": "11–50 employees",
+    "51_200": "51–200 employees",
+    "201_500": "201–500 employees",
+    "500_plus": "500+ employees"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "contacts": "Contacts",
+    "opportunities": "Opportunities",
+    "activity": "Activity",
+    "notes": "Notes"
+  },
+  "empty": {
+    "title": "No companies yet",
+    "description": "Add your first company to organize your accounts.",
+    "cta": "Add Company"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "title": "Settings",
+  "sections": {
+    "organization": "Organization",
+    "profile": "My Profile",
+    "notifications": "Notifications",
+    "pipeline": "Pipeline Stages",
+    "integrations": "Integrations",
+    "security": "Security"
+  },
+  "organization": {
+    "title": "Organization Settings",
+    "name": "Organization Name",
+    "domain": "Domain",
+    "timezone": "Timezone",
+    "currency": "Currency",
+    "logo": "Organization Logo",
+    "uploadLogo": "Upload Logo",
+    "save": "Save Changes"
+  },
+  "profile": {
+    "title": "My Profile",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "jobTitle": "Job Title",
+    "avatar": "Profile Photo",
+    "changePassword": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm New Password"
+  },
+  "notifications": {
+    "title": "Notification Preferences",
+    "email": "Email Notifications",
+    "leadAssigned": "When a lead is assigned to me",
+    "taskDue": "When a task is due",
+    "taskOverdue": "When a task is overdue",
+    "dealStageChanged": "When a deal stage changes",
+    "newActivity": "When activity is logged on my records",
+    "teamUpdates": "Team and organization updates",
+    "weeklyDigest": "Weekly performance digest"
+  },
+  "pipeline": {
+    "title": "Pipeline Stages",
+    "addStage": "Add Stage",
+    "stageName": "Stage Name",
+    "probability": "Default Probability (%)",
+    "color": "Color",
+    "reorder": "Drag to reorder",
+    "deleteStage": "Delete Stage",
+    "deleteWarning": "Deleting a stage will move all opportunities to the previous stage."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Facturación", "currentPlan": "Plan Actual",
+  "plans": {
+    "starter": { "name": "Starter", "description": "Perfecto para equipos pequeños que empiezan", "price": "$29", "period": "/mes", "cta": "Comenzar" },
+    "growth": { "name": "Growth", "description": "Para equipos en crecimiento que necesitan más", "price": "$79", "period": "/mes", "cta": "Mejorar a Growth", "badge": "Más Popular" },
+    "pro": { "name": "Pro", "description": "Funciones avanzadas para equipos de alto rendimiento", "price": "$149", "period": "/mes", "cta": "Mejorar a Pro" }
+  },
+  "features": { "users": "{count} usuarios", "leads": "{count} leads", "opportunities": "Oportunidades ilimitadas", "tasks": "Tareas ilimitadas", "quotes": "{count} cotizaciones/mes", "reports": "Reportes avanzados", "ai": "Funciones de IA", "customFields": "Campos personalizados", "apiAccess": "Acceso API", "prioritySupport": "Soporte prioritario" },
+  "planFeatures": {
+    "starter": ["Hasta 3 usuarios", "Hasta 500 leads", "10 cotizaciones al mes", "Tareas y actividades", "Cotizaciones y pipeline"],
+    "growth": ["Hasta 10 usuarios", "Hasta 5.000 leads", "100 cotizaciones al mes", "Reportes avanzados", "Funciones de IA", "Soporte prioritario"],
+    "pro": ["Usuarios ilimitados", "Leads ilimitados", "Cotizaciones ilimitadas", "Campos personalizados", "Acceso API", "Soporte dedicado"]
+  },
+  "usage": { "title": "Uso", "users": "Usuarios", "leads": "Leads", "quotes": "Cotizaciones este mes", "of": "{used} de {limit}", "unlimited": "Ilimitado", "nearLimit": "Te estás acercando al límite de tu plan.", "atLimit": "Alcanzaste el límite de tu plan. Mejora para continuar." },
+  "subscription": { "status": "Estado de Suscripción", "active": "Activa", "trialing": "Prueba", "trial": "Prueba", "trialEnds": "La prueba termina el {date}", "pastDue": "Pago Vencido", "cancelled": "Cancelada", "renewsOn": "Se renueva el {date}", "cancelledOn": "Cancelada el {date}" },
+  "actions": { "upgrade": "Mejorar Plan", "downgrade": "Reducir Plan", "cancelSubscription": "Cancelar Suscripción", "managePayment": "Gestionar Pago", "viewInvoices": "Ver Facturas", "customerPortal": "Portal de Facturación" },
+  "trial": { "banner": "Te quedan {days} {days, plural, one {día} other {días}} de prueba.", "cta": "Mejorar Ahora" },
+  "cancel": { "title": "Cancelar Suscripción", "description": "Tu suscripción permanecerá activa hasta el final del período. Después perderás acceso a las funciones de pago.", "confirm": "Sí, Cancelar Suscripción" },
+  "empty": { "noSubscription": "Sin suscripción activa.", "startTrial": "Comienza tu prueba gratuita de 14 días." }
+}

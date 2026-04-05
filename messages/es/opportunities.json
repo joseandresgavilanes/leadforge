@@ -1,0 +1,19 @@
+{
+  "title": "Oportunidades", "singular": "Oportunidad", "plural": "Oportunidades",
+  "createOpportunity": "Nueva Oportunidad", "editOpportunity": "Editar Oportunidad",
+  "fields": { "name": "Nombre de Oportunidad", "value": "Valor", "stage": "Etapa", "probability": "Probabilidad", "closeDate": "Fecha Estimada de Cierre", "owner": "Responsable", "contact": "Contacto Principal", "company": "Empresa", "nextAction": "Próxima Acción", "notes": "Notas", "source": "Fuente", "lostReason": "Razón de pérdida", "createdAt": "Creado", "lastActivity": "Última Actividad" },
+  "views": { "kanban": "Kanban", "table": "Tabla" },
+  "health": { "healthy": "Saludable", "atRisk": "En riesgo", "stale": "Inactivo", "noActivity": "Sin actividad en {days} días" },
+  "stages": { "prospecting": "Prospección", "qualification": "Calificación", "proposal": "Propuesta", "negotiation": "Negociación", "closed_won": "Ganado", "closed_lost": "Perdido" },
+  "tabs": { "overview": "Resumen", "activity": "Actividad", "tasks": "Tareas", "quotes": "Cotizaciones", "notes": "Notas" },
+  "empty": { "title": "Sin oportunidades aún", "description": "Crea tu primera oportunidad para rastrear tus deals.", "cta": "Agregar Oportunidad", "noStageDeals": "Sin deals en esta etapa" },
+  "ai": {
+    "title": "Asistente de ventas con IA",
+    "generate": "Generar",
+    "summary": "Resumen de la oportunidad",
+    "nextStep": "Próximo paso",
+    "followUpDraft": "Borrador de correo de seguimiento",
+    "meetingSummary": "Resumen de reunión",
+    "generating": "Generando..."
+  }
+}

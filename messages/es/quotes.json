@@ -1,0 +1,10 @@
+{
+  "title": "Cotizaciones", "singular": "Cotización", "plural": "Cotizaciones",
+  "createQuote": "Nueva Cotización", "editQuote": "Editar Cotización",
+  "fields": { "quoteNumber": "Cotización #", "title": "Título", "opportunity": "Oportunidad", "contact": "Contacto", "company": "Empresa", "status": "Estado", "issueDate": "Fecha de Emisión", "expiryDate": "Fecha de Vencimiento", "notes": "Notas", "terms": "Términos y Condiciones", "subtotal": "Subtotal", "taxRate": "Tasa de Impuesto (%)", "taxAmount": "Impuesto", "total": "Total", "discount": "Descuento" },
+  "lineItems": { "title": "Líneas", "addItem": "Agregar Línea", "description": "Descripción", "quantity": "Cant.", "unitPrice": "Precio Unitario", "amount": "Importe", "removeItem": "Quitar" },
+  "statuses": { "draft": "Borrador", "sent": "Enviada", "accepted": "Aceptada", "rejected": "Rechazada", "expired": "Vencida" },
+  "actions": { "send": "Enviar Cotización", "downloadPdf": "Descargar PDF", "duplicate": "Duplicar", "markAccepted": "Marcar como Aceptada", "markRejected": "Marcar como Rechazada" },
+  "empty": { "title": "Sin cotizaciones aún", "description": "Crea cotizaciones profesionales y rastrea su estado.", "cta": "Nueva Cotización" },
+  "pdf": { "to": "Para", "from": "De", "quoteDate": "Fecha", "validUntil": "Válida Hasta", "paymentTerms": "Condiciones de Pago", "thankYou": "¡Gracias por su preferencia!" }
+}

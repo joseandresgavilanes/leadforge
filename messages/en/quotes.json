@@ -1,0 +1,60 @@
+{
+  "title": "Quotes",
+  "singular": "Quote",
+  "plural": "Quotes",
+  "createQuote": "New Quote",
+  "editQuote": "Edit Quote",
+  "fields": {
+    "quoteNumber": "Quote #",
+    "title": "Title",
+    "opportunity": "Opportunity",
+    "contact": "Contact",
+    "company": "Company",
+    "status": "Status",
+    "issueDate": "Issue Date",
+    "expiryDate": "Expiry Date",
+    "notes": "Notes",
+    "terms": "Terms & Conditions",
+    "subtotal": "Subtotal",
+    "taxRate": "Tax Rate (%)",
+    "taxAmount": "Tax",
+    "total": "Total",
+    "discount": "Discount"
+  },
+  "lineItems": {
+    "title": "Line Items",
+    "addItem": "Add Item",
+    "description": "Description",
+    "quantity": "Qty",
+    "unitPrice": "Unit Price",
+    "amount": "Amount",
+    "removeItem": "Remove"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "sent": "Sent",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+    "expired": "Expired"
+  },
+  "actions": {
+    "send": "Send Quote",
+    "downloadPdf": "Download PDF",
+    "duplicate": "Duplicate",
+    "markAccepted": "Mark as Accepted",
+    "markRejected": "Mark as Rejected"
+  },
+  "empty": {
+    "title": "No quotes yet",
+    "description": "Create professional quotes and track their status.",
+    "cta": "New Quote"
+  },
+  "pdf": {
+    "to": "To",
+    "from": "From",
+    "quoteDate": "Quote Date",
+    "validUntil": "Valid Until",
+    "paymentTerms": "Payment Terms",
+    "thankYou": "Thank you for your business!"
+  }
+}

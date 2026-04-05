@@ -1,0 +1,38 @@
+{
+  "hero": { "badge": "CRM construido para equipos de ventas reales", "title": "Nunca pierdas un lead ni un seguimiento importante", "subtitle": "LeadForge le da a tu equipo comercial un CRM enfocado y rápido para capturar leads, mover deals y cerrar más ingresos — sin la complejidad de las herramientas empresariales.", "ctaPrimary": "Prueba Gratis", "ctaSecondary": "Ver demo", "noCard": "Sin tarjeta de crédito. 14 días gratis." },
+  "trust": { "title": "Confiado por equipos comerciales en crecimiento", "metrics": { "leads": "Leads gestionados", "deals": "Deals cerrados", "teams": "Equipos en todo el mundo", "uptime": "SLA de disponibilidad" } },
+  "features": {
+    "title": "Todo lo que tu equipo necesita para cerrar más deals",
+    "subtitle": "Un espacio de trabajo de ventas completo — desde el primer lead hasta la cotización firmada.",
+    "pipeline": { "title": "Gestión Visual del Pipeline", "description": "Mueve deals entre etapas, detecta cuellos de botella al instante y mantén a todo tu equipo alineado." },
+    "leads": { "title": "Captura Inteligente de Leads", "description": "Captura, puntúa y califica leads de cualquier fuente. Convierte los mejores en contactos y oportunidades con un clic." },
+    "followup": { "title": "Seguimientos que No Olvidarás", "description": "Tareas, recordatorios y seguimiento de actividad para que ningún deal se enfríe. Recibe alertas cuando los deals necesitan atención." },
+    "quotes": { "title": "Cotizaciones Profesionales", "description": "Crea, envía y rastrea cotizaciones con líneas de detalle, impuestos y exportación a PDF. Vincúlalas directamente a oportunidades." },
+    "forecast": { "title": "Forecast y Reportes", "description": "Valor del pipeline en tiempo real, tasa de ganancia y forecast mensual. Sabe exactamente de dónde viene tu ingreso." },
+    "ai": { "title": "Asistente de Ventas IA", "description": "Obtén resúmenes con IA, sugerencias de próximos pasos y borradores de seguimiento — justo donde estás trabajando." }
+  },
+  "pricing": {
+    "title": "Precios simples y predecibles", "subtitle": "Sin sorpresas por asiento. Elige el plan que se ajusta a tu equipo.",
+    "monthly": "Mensual", "annual": "Anual", "save": "Ahorra 20%",
+    "faq": { "title": "Preguntas frecuentes", "trial": { "q": "¿Hay prueba gratuita?", "a": "Sí. Cada plan comienza con 14 días gratis. Sin tarjeta de crédito." }, "cancel": { "q": "¿Puedo cancelar en cualquier momento?", "a": "Absolutamente. Cancela cuando quieras desde tu configuración de facturación. Sin permanencia." }, "upgrade": { "q": "¿Puedo cambiar de plan más tarde?", "a": "Sí. Puedes cambiar tu plan en cualquier momento y prorratearemos la diferencia." }, "data": { "q": "¿Qué pasa con mis datos si cancelo?", "a": "Tus datos son tuyos. Puedes exportar todo antes de cancelar." } }
+  },
+  "useCases": {
+    "title": "Hecho para equipos como el tuyo",
+    "founderLed": { "title": "Ventas lideradas por fundadores", "description": "Eres el equipo de ventas. LeadForge te mantiene enfocado sin perderte en hojas de cálculo." },
+    "salesTeam": { "title": "Equipos de ventas pequeños", "description": "Un espacio compartido con ownership claro, visibilidad del pipeline y sin duplicar esfuerzos." },
+    "agencies": { "title": "Agencias y consultoras", "description": "Gestiona tu pipeline de nuevos negocios junto con el trabajo con clientes. Cotiza rápido, cierra más rápido." }
+  },
+  "blogPage": {
+    "title": "Blog",
+    "subtitle": "Ideas prácticas para disciplina en el pipeline y crecimiento de ingresos.",
+    "post1Title": "Higiene del pipeline que realmente perdura",
+    "post1Excerpt": "Rituales semanales y hábitos en el CRM que mantienen los deals en movimiento.",
+    "post2Title": "Forecasting sin el caos de la hoja de cálculo",
+    "post2Excerpt": "Alinea etapas, probabilidades y responsabilidad del equipo comercial.",
+    "post3Title": "Incorporar reps a tu proceso en una semana",
+    "post3Excerpt": "Listas de verificación y flujos LeadForge que reducen el tiempo de ramp-up."
+  },
+  "demo": { "title": "Ve LeadForge en acción", "subtitle": "Reserva una demo de 20 minutos y te mostraremos cómo LeadForge puede encajar en el flujo de trabajo de tu equipo.", "form": { "firstName": "Nombre", "lastName": "Apellido", "email": "Correo laboral", "company": "Empresa", "teamSize": "Tamaño del equipo", "submit": "Reservar Demo", "success": "¡Gracias! Te contactaremos en 1 día hábil.", "teamSizes": { "1": "Solo yo", "2_5": "2–5 personas", "6_15": "6–15 personas", "16_plus": "16+ personas" } } },
+  "footer": { "product": "Producto", "company": "Empresa", "legal": "Legal", "about": "Acerca de", "blog": "Blog", "careers": "Empleo", "contact": "Contacto", "privacy": "Política de Privacidad", "terms": "Términos de Servicio", "security": "Seguridad", "copyright": "© {year} LeadForge. Todos los derechos reservados." },
+  "cta": { "title": "¿Listo para cerrar más deals?", "subtitle": "Únete a cientos de equipos de ventas que usan LeadForge para alcanzar sus metas.", "primary": "Prueba Gratis", "secondary": "Hablar con Ventas" }
+}

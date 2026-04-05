@@ -1,0 +1,28 @@
+{
+  "title": "Leads", "singular": "Lead", "plural": "Leads",
+  "createLead": "Nuevo Lead", "editLead": "Editar Lead", "viewLead": "Detalle del Lead", "convertLead": "Convertir Lead",
+  "fields": {
+    "firstName": "Nombre", "lastName": "Apellido", "email": "Correo", "phone": "Teléfono",
+    "company": "Empresa", "jobTitle": "Cargo", "source": "Fuente del Lead", "status": "Estado",
+    "score": "Puntuación", "owner": "Responsable", "tags": "Etiquetas", "notes": "Notas",
+    "website": "Sitio web", "industry": "Industria", "budget": "Presupuesto",
+    "createdAt": "Creado", "lastActivity": "Última Actividad"
+  },
+  "sources": {
+    "website": "Sitio web", "referral": "Referido", "linkedin": "LinkedIn",
+    "cold_outreach": "Prospección fría", "event": "Evento", "inbound": "Inbound",
+    "paid_ads": "Anuncios pagados", "other": "Otro"
+  },
+  "statuses": { "new": "Nuevo", "contacted": "Contactado", "qualified": "Calificado", "unqualified": "No calificado", "converted": "Convertido" },
+  "convert": {
+    "title": "Convertir Lead",
+    "description": "Convierte este lead en un Contacto, Empresa y/u Oportunidad.",
+    "createContact": "Crear Contacto", "createCompany": "Crear Empresa", "createOpportunity": "Crear Oportunidad",
+    "opportunityName": "Nombre de Oportunidad", "opportunityValue": "Valor Estimado",
+    "stage": "Etapa del pipeline",
+    "success": "Lead convertido exitosamente."
+  },
+  "score": { "hot": "Caliente", "warm": "Tibio", "cold": "Frío" },
+  "empty": { "title": "Sin leads aún", "description": "Captura tu primer lead para comenzar a llenar tu pipeline.", "cta": "Agregar Lead" },
+  "filters": { "allStatuses": "Todos los estados", "allSources": "Todas las fuentes", "allOwners": "Todos los responsables", "dateRange": "Rango de fechas", "scoreRange": "Puntuación" }
+}

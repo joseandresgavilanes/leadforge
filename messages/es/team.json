@@ -1,0 +1,11 @@
+{
+  "title": "Equipo", "roleGuideTitle": "Permisos por rol", "you": "tú", "members": "Miembros", "inviteTeamMember": "Invitar Miembro",
+  "fields": { "name": "Nombre", "email": "Correo", "role": "Rol", "joinedAt": "Se unió", "lastSeen": "Última Actividad", "status": "Estado" },
+  "roles": { "org_admin": "Administrador", "sales_manager": "Gerente de Ventas", "sales_rep": "Vendedor", "viewer": "Observador" },
+  "roleDescriptions": { "org_admin": "Acceso completo a configuraciones, facturación y gestión del equipo.", "sales_manager": "Puede ver y editar todos los registros de la organización.", "sales_rep": "Puede gestionar sus propios registros y los compartidos.", "viewer": "Acceso de solo lectura a todos los registros." },
+  "invite": { "title": "Invitar Miembro", "email": "Correo electrónico", "role": "Rol", "send": "Enviar Invitación", "success": "Invitación enviada a {email}.", "pending": "Pendiente" },
+  "actions": { "changeRole": "Cambiar Rol", "removeMember": "Quitar del Equipo", "resendInvite": "Reenviar Invitación", "cancelInvite": "Cancelar Invitación" },
+  "remove": { "title": "Quitar Miembro", "description": "¿Estás seguro de que quieres quitar a {name} de la organización? Sus registros permanecerán pero perderá acceso.", "confirm": "Quitar Miembro" },
+  "empty": { "title": "Solo tú por ahora", "description": "Invita a tu equipo para colaborar en LeadForge.", "cta": "Invitar Miembro" },
+  "limitReached": "Alcanzaste el límite de usuarios de tu plan. Mejora para agregar más miembros."
+}

@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "features": "Funcionalidades",
+    "pricing": "Precios",
+    "useCases": "Casos de Uso",
+    "demo": "Demo",
+    "blog": "Blog",
+    "security": "Seguridad",
+    "login": "Iniciar Sesión",
+    "signup": "Prueba Gratis",
+    "dashboard": "Panel"
+  },
+  "app": {
+    "productName": "LeadForge",
+    "accountSection": "Cuenta",
+    "nav": {
+      "dashboard": "Panel",
+      "leads": "Leads",
+      "contacts": "Contactos",
+      "companies": "Empresas",
+      "opportunities": "Oportunidades",
+      "tasks": "Tareas",
+      "activities": "Actividades",
+      "quotes": "Cotizaciones",
+      "reports": "Reportes",
+      "team": "Equipo",
+      "settings": "Configuración",
+      "billing": "Facturación"
+    }
+  },
+  "actions": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "add": "Agregar",
+    "view": "Ver",
+    "export": "Exportar",
+    "import": "Importar",
+    "filter": "Filtrar",
+    "search": "Buscar",
+    "clear": "Limpiar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "submit": "Enviar",
+    "update": "Actualizar",
+    "remove": "Quitar",
+    "assign": "Asignar",
+    "convert": "Convertir",
+    "download": "Descargar",
+    "preview": "Vista previa",
+    "duplicate": "Duplicar",
+    "archive": "Archivar"
+  },
+  "status": {
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "pending": "Pendiente",
+    "completed": "Completado",
+    "cancelled": "Cancelado",
+    "draft": "Borrador",
+    "sent": "Enviado",
+    "overdue": "Vencido",
+    "new": "Nuevo",
+    "open": "Abierto",
+    "closed": "Cerrado",
+    "won": "Ganado",
+    "lost": "Perdido"
+  },
+  "priority": {
+    "low": "Baja",
+    "medium": "Media",
+    "high": "Alta",
+    "urgent": "Urgente"
+  },
+  "table": {
+    "noResults": "Sin resultados.",
+    "showing": "Mostrando {from} a {to} de {total} resultados",
+    "rowsPerPage": "Filas por página",
+    "page": "Página {current} de {total}"
+  },
+  "form": {
+    "required": "Este campo es obligatorio",
+    "invalidEmail": "Ingresa un correo electrónico válido",
+    "minLength": "Mínimo {min} caracteres",
+    "maxLength": "Máximo {max} caracteres",
+    "invalidUrl": "Ingresa una URL válida",
+    "invalidPhone": "Ingresa un teléfono válido"
+  },
+  "errors": {
+    "generic": "Algo salió mal. Por favor intenta de nuevo.",
+    "notFound": "No encontrado",
+    "unauthorized": "No tienes permiso para hacer esto.",
+    "serverError": "Error del servidor. Intenta más tarde.",
+    "networkError": "Error de red. Verifica tu conexión."
+  },
+  "empty": {
+    "noData": "Sin datos aún",
+    "getStarted": "Comienza creando tu primer {entity}."
+  },
+  "confirm": {
+    "deleteTitle": "Eliminar {entity}",
+    "deleteDescription": "¿Estás seguro de que quieres eliminar este {entity}? Esta acción no se puede deshacer.",
+    "archiveTitle": "Archivar {entity}",
+    "archiveDescription": "¿Estás seguro de que quieres archivar este {entity}?"
+  },
+  "toast": {
+    "created": "{entity} creado exitosamente.",
+    "updated": "{entity} actualizado exitosamente.",
+    "deleted": "{entity} eliminado exitosamente.",
+    "error": "Ocurrió un error.",
+    "copied": "Copiado al portapapeles."
+  },
+  "time": {
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "daysAgo": "Hace {days} días",
+    "hoursAgo": "Hace {hours} horas",
+    "minutesAgo": "Hace {minutes} minutos",
+    "justNow": "Justo ahora",
+    "never": "Nunca"
+  },
+  "currency": {
+    "format": "${amount}"
+  },
+  "langSwitcher": {
+    "label": "Idioma"
+  },
+  "organization": {
+    "switchOrg": "Cambiar Organización",
+    "createOrg": "Crear Organización",
+    "settings": "Configuración de Organización"
+  },
+  "user": {
+    "profile": "Perfil",
+    "logout": "Cerrar Sesión",
+    "account": "Cuenta"
+  }
+}

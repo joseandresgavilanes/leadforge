@@ -1,0 +1,31 @@
+{
+  "title": "Contacts",
+  "singular": "Contact",
+  "plural": "Contacts",
+  "createContact": "New Contact",
+  "editContact": "Edit Contact",
+  "fields": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "jobTitle": "Job Title",
+    "company": "Company",
+    "owner": "Owner",
+    "tags": "Tags",
+    "notes": "Notes",
+    "linkedIn": "LinkedIn",
+    "createdAt": "Created"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "activity": "Activity",
+    "opportunities": "Opportunities",
+    "notes": "Notes"
+  },
+  "empty": {
+    "title": "No contacts yet",
+    "description": "Add your first contact or convert a lead.",
+    "cta": "Add Contact"
+  }
+}

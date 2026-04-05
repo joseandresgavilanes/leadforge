@@ -1,0 +1,7 @@
+{
+  "title": "Actividades", "singular": "Actividad", "plural": "Actividades", "logActivity": "Registrar Actividad",
+  "types": { "call": "Llamada", "meeting": "Reunión", "email": "Correo", "note": "Nota", "demo": "Demo", "task": "Tarea" },
+  "fields": { "type": "Tipo de Actividad", "subject": "Asunto", "description": "Notas / Resumen", "duration": "Duración (minutos)", "date": "Fecha", "outcome": "Resultado", "relatedTo": "Relacionado con" },
+  "outcomes": { "positive": "Positivo", "neutral": "Neutral", "negative": "Negativo", "no_answer": "Sin respuesta", "left_voicemail": "Dejó mensaje de voz" },
+  "empty": { "title": "Sin actividades registradas", "description": "Registra todas tus interacciones de ventas aquí.", "cta": "Registrar Actividad" }
+}

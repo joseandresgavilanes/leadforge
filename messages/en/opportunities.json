@@ -1,0 +1,63 @@
+{
+  "title": "Opportunities",
+  "singular": "Opportunity",
+  "plural": "Opportunities",
+  "createOpportunity": "New Opportunity",
+  "editOpportunity": "Edit Opportunity",
+  "fields": {
+    "name": "Opportunity Name",
+    "value": "Value",
+    "stage": "Stage",
+    "probability": "Probability",
+    "closeDate": "Expected Close Date",
+    "owner": "Owner",
+    "contact": "Primary Contact",
+    "company": "Company",
+    "nextAction": "Next Action",
+    "notes": "Notes",
+    "source": "Source",
+    "lostReason": "Lost Reason",
+    "createdAt": "Created",
+    "lastActivity": "Last Activity"
+  },
+  "views": {
+    "kanban": "Kanban",
+    "table": "Table"
+  },
+  "health": {
+    "healthy": "Healthy",
+    "atRisk": "At Risk",
+    "stale": "Stale",
+    "noActivity": "No activity in {days} days"
+  },
+  "stages": {
+    "prospecting": "Prospecting",
+    "qualification": "Qualification",
+    "proposal": "Proposal",
+    "negotiation": "Negotiation",
+    "closed_won": "Closed Won",
+    "closed_lost": "Closed Lost"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "activity": "Activity",
+    "tasks": "Tasks",
+    "quotes": "Quotes",
+    "notes": "Notes"
+  },
+  "empty": {
+    "title": "No opportunities yet",
+    "description": "Create your first opportunity to start tracking deals.",
+    "cta": "Add Opportunity",
+    "noStageDeals": "No deals in this stage"
+  },
+  "ai": {
+    "title": "AI sales assistant",
+    "generate": "Generate",
+    "summary": "Opportunity summary",
+    "nextStep": "Next step",
+    "followUpDraft": "Follow-up email draft",
+    "meetingSummary": "Meeting summary",
+    "generating": "Generating..."
+  }
+}

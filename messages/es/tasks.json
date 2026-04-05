@@ -1,0 +1,9 @@
+{
+  "title": "Tareas", "singular": "Tarea", "plural": "Tareas",
+  "createTask": "Nueva Tarea", "editTask": "Editar Tarea", "completeTask": "Marcar como Completada",
+  "fields": { "title": "Título", "description": "Descripción", "priority": "Prioridad", "dueDate": "Fecha Límite", "owner": "Asignado a", "relatedTo": "Relacionado con", "status": "Estado", "completedAt": "Completado" },
+  "statuses": { "open": "Abierta", "completed": "Completada", "overdue": "Vencida" },
+  "filters": { "all": "Todas las Tareas", "mine": "Mis Tareas", "overdue": "Vencidas", "dueToday": "Para Hoy", "dueThisWeek": "Esta Semana" },
+  "empty": { "title": "Sin tareas", "description": "Mantente organizado creando tu primera tarea.", "cta": "Agregar Tarea" },
+  "overdue": "Vencida hace {days} {days, plural, one {día} other {días}}"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Dashboard",
+  "greeting": "Good {timeOfDay}, {name}",
+  "timeOfDay": {
+    "morning": "morning",
+    "afternoon": "afternoon",
+    "evening": "evening"
+  },
+  "stats": {
+    "newLeads": "New Leads",
+    "openOpportunities": "Open Opportunities",
+    "pipelineValue": "Pipeline Value",
+    "monthlyForecast": "Monthly Forecast",
+    "vsLastMonth": "{change}% vs last month",
+    "thisMonth": "This month"
+  },
+  "widgets": {
+    "overdueTasks": "Overdue Tasks",
+    "staleDeals": "Deals Without Activity",
+    "staleDescription": "No activity in the last {days} days",
+    "recentActivity": "Recent Activity",
+    "topOpportunities": "Top Opportunities",
+    "quickActions": "Quick Actions"
+  },
+  "quickActions": {
+    "newLead": "New Lead",
+    "newOpportunity": "New Opportunity",
+    "newTask": "New Task",
+    "newActivity": "Log Activity"
+  },
+  "empty": {
+    "noTasks": "No overdue tasks. You're on track!",
+    "noStaleDeals": "All deals have recent activity.",
+    "noActivity": "No recent activity. Start adding leads and opportunities."
+  }
+}

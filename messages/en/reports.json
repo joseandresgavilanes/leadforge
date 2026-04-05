@@ -1,0 +1,45 @@
+{
+  "title": "Reports",
+  "subtitle": "Insights and analytics for your sales team",
+  "charts": {
+    "leadsBySource": "Leads by Source",
+    "pipelineByStage": "Pipeline by Stage",
+    "forecast": "Monthly Forecast",
+    "activityByRep": "Activity by Rep",
+    "overdueFollowUps": "Overdue Follow-ups",
+    "winRate": "Win Rate",
+    "avgDealSize": "Avg Deal Size",
+    "avgSalesCycle": "Avg Sales Cycle"
+  },
+  "filters": {
+    "dateRange": "Date Range",
+    "rep": "Sales Rep",
+    "last7days": "Last 7 days",
+    "last30days": "Last 30 days",
+    "last90days": "Last 90 days",
+    "thisMonth": "This month",
+    "lastMonth": "Last month",
+    "thisQuarter": "This quarter",
+    "custom": "Custom"
+  },
+  "metrics": {
+    "totalLeads": "Total Leads",
+    "convertedLeads": "Converted Leads",
+    "conversionRate": "Conversion Rate",
+    "openDeals": "Open Deals",
+    "wonDeals": "Won Deals",
+    "lostDeals": "Lost Deals",
+    "pipelineValue": "Pipeline Value",
+    "forecastValue": "Forecast Value",
+    "activitiesLogged": "Activities Logged"
+  },
+  "empty": {
+    "title": "Not enough data yet",
+    "description": "Reports will populate as your team logs activities and moves deals through the pipeline."
+  },
+  "upgrade": {
+    "title": "Reports require Growth plan or above",
+    "description": "Upgrade to unlock full sales analytics and forecasting.",
+    "cta": "Upgrade Plan"
+  }
+}

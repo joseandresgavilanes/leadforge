@@ -1,0 +1,8 @@
+{
+  "title": "Empresas", "singular": "Empresa", "plural": "Empresas",
+  "createCompany": "Nueva Empresa", "editCompany": "Editar Empresa",
+  "fields": { "name": "Nombre de Empresa", "domain": "Dominio", "industry": "Industria", "size": "Tamaño", "revenue": "Ingresos Anuales", "phone": "Teléfono", "address": "Dirección", "city": "Ciudad", "country": "País", "owner": "Responsable", "notes": "Notas", "website": "Sitio web", "createdAt": "Creado" },
+  "sizes": { "1_10": "1–10 empleados", "11_50": "11–50 empleados", "51_200": "51–200 empleados", "201_500": "201–500 empleados", "500_plus": "500+ empleados" },
+  "tabs": { "overview": "Resumen", "contacts": "Contactos", "opportunities": "Oportunidades", "activity": "Actividad", "notes": "Notas" },
+  "empty": { "title": "Sin empresas aún", "description": "Agrega tu primera empresa para organizar tus cuentas.", "cta": "Agregar Empresa" }
+}

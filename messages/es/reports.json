@@ -1,0 +1,8 @@
+{
+  "title": "Reportes", "subtitle": "Insights y analíticas para tu equipo comercial",
+  "charts": { "leadsBySource": "Leads por Fuente", "pipelineByStage": "Pipeline por Etapa", "forecast": "Forecast Mensual", "activityByRep": "Actividad por Vendedor", "overdueFollowUps": "Seguimientos Vencidos", "winRate": "Tasa de Ganancia", "avgDealSize": "Tamaño Promedio de Deal", "avgSalesCycle": "Ciclo Promedio de Venta" },
+  "filters": { "dateRange": "Rango de Fechas", "rep": "Vendedor", "last7days": "Últimos 7 días", "last30days": "Últimos 30 días", "last90days": "Últimos 90 días", "thisMonth": "Este mes", "lastMonth": "Mes anterior", "thisQuarter": "Este trimestre", "custom": "Personalizado" },
+  "metrics": { "totalLeads": "Total de Leads", "convertedLeads": "Leads Convertidos", "conversionRate": "Tasa de Conversión", "openDeals": "Deals Abiertos", "wonDeals": "Deals Ganados", "lostDeals": "Deals Perdidos", "pipelineValue": "Valor del Pipeline", "forecastValue": "Valor Forecast", "activitiesLogged": "Actividades Registradas" },
+  "empty": { "title": "Aún no hay suficientes datos", "description": "Los reportes se llenarán a medida que tu equipo registre actividades y mueva deals." },
+  "upgrade": { "title": "Los reportes requieren el plan Growth o superior", "description": "Mejora tu plan para desbloquear analíticas y forecast completos.", "cta": "Mejorar Plan" }
+}

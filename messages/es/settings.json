@@ -1,0 +1,8 @@
+{
+  "title": "Configuración",
+  "sections": { "organization": "Organización", "profile": "Mi Perfil", "notifications": "Notificaciones", "pipeline": "Etapas del Pipeline", "integrations": "Integraciones", "security": "Seguridad" },
+  "organization": { "title": "Configuración de Organización", "name": "Nombre de Organización", "domain": "Dominio", "timezone": "Zona Horaria", "currency": "Moneda", "logo": "Logo de Organización", "uploadLogo": "Subir Logo", "save": "Guardar Cambios" },
+  "profile": { "title": "Mi Perfil", "firstName": "Nombre", "lastName": "Apellido", "email": "Correo", "phone": "Teléfono", "jobTitle": "Cargo", "avatar": "Foto de Perfil", "changePassword": "Cambiar Contraseña", "currentPassword": "Contraseña Actual", "newPassword": "Nueva Contraseña", "confirmPassword": "Confirmar Nueva Contraseña" },
+  "notifications": { "title": "Preferencias de Notificación", "email": "Notificaciones por Correo", "leadAssigned": "Cuando se me asigna un lead", "taskDue": "Cuando vence una tarea", "taskOverdue": "Cuando una tarea está vencida", "dealStageChanged": "Cuando cambia la etapa de un deal", "newActivity": "Cuando se registra actividad en mis registros", "teamUpdates": "Actualizaciones del equipo y organización", "weeklyDigest": "Resumen semanal de rendimiento" },
+  "pipeline": { "title": "Etapas del Pipeline", "addStage": "Agregar Etapa", "stageName": "Nombre de Etapa", "probability": "Probabilidad por Defecto (%)", "color": "Color", "reorder": "Arrastra para reordenar", "deleteStage": "Eliminar Etapa", "deleteWarning": "Eliminar una etapa moverá todas las oportunidades a la etapa anterior." }
+}

@@ -1,0 +1,52 @@
+{
+  "title": "Team",
+  "members": "Members",
+  "inviteTeamMember": "Invite Member",
+  "fields": {
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "joinedAt": "Joined",
+    "lastSeen": "Last Active",
+    "status": "Status"
+  },
+  "roles": {
+    "org_admin": "Admin",
+    "sales_manager": "Sales Manager",
+    "sales_rep": "Sales Rep",
+    "viewer": "Viewer"
+  },
+  "roleDescriptions": {
+    "org_admin": "Full access to all settings, billing, and team management.",
+    "sales_manager": "Can view and edit all records in the organization.",
+    "sales_rep": "Can manage their own records and shared records.",
+    "viewer": "Read-only access to all records."
+  },
+  "roleGuideTitle": "Role permissions",
+  "you": "you",
+  "invite": {
+    "title": "Invite Team Member",
+    "email": "Email address",
+    "role": "Role",
+    "send": "Send Invitation",
+    "success": "Invitation sent to {email}.",
+    "pending": "Pending"
+  },
+  "actions": {
+    "changeRole": "Change Role",
+    "removeMember": "Remove from Team",
+    "resendInvite": "Resend Invite",
+    "cancelInvite": "Cancel Invite"
+  },
+  "remove": {
+    "title": "Remove Team Member",
+    "description": "Are you sure you want to remove {name} from the organization? Their records will remain but they'll lose access.",
+    "confirm": "Remove Member"
+  },
+  "empty": {
+    "title": "Just you for now",
+    "description": "Invite your team to collaborate in LeadForge.",
+    "cta": "Invite Member"
+  },
+  "limitReached": "You've reached the user limit for your plan. Upgrade to add more team members."
+}

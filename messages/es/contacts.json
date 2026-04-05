@@ -1,0 +1,7 @@
+{
+  "title": "Contactos", "singular": "Contacto", "plural": "Contactos",
+  "createContact": "Nuevo Contacto", "editContact": "Editar Contacto",
+  "fields": { "firstName": "Nombre", "lastName": "Apellido", "email": "Correo", "phone": "Teléfono", "jobTitle": "Cargo", "company": "Empresa", "owner": "Responsable", "tags": "Etiquetas", "notes": "Notas", "linkedIn": "LinkedIn", "createdAt": "Creado" },
+  "tabs": { "overview": "Resumen", "activity": "Actividad", "opportunities": "Oportunidades", "notes": "Notas" },
+  "empty": { "title": "Sin contactos aún", "description": "Agrega tu primer contacto o convierte un lead.", "cta": "Agregar Contacto" }
+}

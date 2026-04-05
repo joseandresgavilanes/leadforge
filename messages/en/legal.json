@@ -1,0 +1,29 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: April 2026",
+    "p1": "LeadForge CRM (“we”, “us”) processes personal data to provide the Service. This policy describes what we collect, why, and your choices.",
+    "p2": "We collect account data (name, email), usage data, and content you store in workspaces. Processing is based on contract performance, legitimate interest, and consent where required.",
+    "p3": "We use subprocessors including hosting and email providers. Data may be transferred internationally with appropriate safeguards.",
+    "p4": "You may access, correct, export, or delete your data where applicable by contacting support or using in-product controls.",
+    "p5": "We retain data while your account is active and as needed for legal obligations. Security measures include encryption in transit and strict tenant isolation."
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "updated": "Last updated: April 2026",
+    "p1": "By using LeadForge you agree to these terms. You must be authorized to bind your organization.",
+    "p2": "The Service is provided as described in your plan. You are responsible for user activity under your account and for compliance with applicable laws.",
+    "p3": "Fees are billed according to your subscription. We may suspend access for non-payment or material breach.",
+    "p4": "The Service is provided “as is” to the extent permitted by law. Liability is limited as set forth in your order form or applicable law.",
+    "p5": "Either party may terminate. Upon termination, your access ends and data handling follows our privacy policy."
+  },
+  "security": {
+    "title": "Security",
+    "subtitle": "How we protect your CRM data",
+    "p1": "Multi-tenant isolation is enforced at the database with row-level security and organization-scoped application logic.",
+    "p2": "Authentication uses industry-standard flows. Passwords are never stored in plaintext. Sessions use secure cookies.",
+    "p3": "Billing data is processed by PCI-compliant providers. We do not store full card numbers on our servers.",
+    "p4": "We log critical actions for auditability. Access to production systems is restricted and monitored.",
+    "p5": "Report vulnerabilities responsibly to security@leadforge.io."
+  }
+}

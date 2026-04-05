@@ -1,0 +1,36 @@
+{
+  "title": "Tasks",
+  "singular": "Task",
+  "plural": "Tasks",
+  "createTask": "New Task",
+  "editTask": "Edit Task",
+  "completeTask": "Mark Complete",
+  "fields": {
+    "title": "Title",
+    "description": "Description",
+    "priority": "Priority",
+    "dueDate": "Due Date",
+    "owner": "Assigned To",
+    "relatedTo": "Related To",
+    "status": "Status",
+    "completedAt": "Completed"
+  },
+  "statuses": {
+    "open": "Open",
+    "completed": "Completed",
+    "overdue": "Overdue"
+  },
+  "filters": {
+    "all": "All Tasks",
+    "mine": "My Tasks",
+    "overdue": "Overdue",
+    "dueToday": "Due Today",
+    "dueThisWeek": "Due This Week"
+  },
+  "empty": {
+    "title": "No tasks",
+    "description": "Stay organized by creating your first task.",
+    "cta": "Add Task"
+  },
+  "overdue": "Overdue by {days} {days, plural, one {day} other {days}}"
+}

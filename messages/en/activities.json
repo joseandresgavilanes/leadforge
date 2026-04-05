@@ -1,0 +1,35 @@
+{
+  "title": "Activities",
+  "singular": "Activity",
+  "plural": "Activities",
+  "logActivity": "Log Activity",
+  "types": {
+    "call": "Call",
+    "meeting": "Meeting",
+    "email": "Email",
+    "note": "Note",
+    "demo": "Demo",
+    "task": "Task"
+  },
+  "fields": {
+    "type": "Activity Type",
+    "subject": "Subject",
+    "description": "Notes / Summary",
+    "duration": "Duration (minutes)",
+    "date": "Date",
+    "outcome": "Outcome",
+    "relatedTo": "Related To"
+  },
+  "outcomes": {
+    "positive": "Positive",
+    "neutral": "Neutral",
+    "negative": "Negative",
+    "no_answer": "No Answer",
+    "left_voicemail": "Left Voicemail"
+  },
+  "empty": {
+    "title": "No activities logged",
+    "description": "Track all your sales interactions here.",
+    "cta": "Log Activity"
+  }
+}

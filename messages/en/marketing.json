@@ -1,0 +1,136 @@
+{
+  "hero": {
+    "badge": "CRM built for real sales teams",
+    "title": "Never lose a lead or miss a follow-up again",
+    "subtitle": "LeadForge gives your sales team a focused, fast CRM to capture leads, move deals, and close more revenue — without the complexity of enterprise tools.",
+    "ctaPrimary": "Start Free Trial",
+    "ctaSecondary": "See it in action",
+    "noCard": "No credit card required. 14-day free trial."
+  },
+  "trust": {
+    "title": "Trusted by growing sales teams",
+    "metrics": {
+      "leads": "Leads managed",
+      "deals": "Deals closed",
+      "teams": "Teams worldwide",
+      "uptime": "Uptime SLA"
+    }
+  },
+  "features": {
+    "title": "Everything your team needs to close more deals",
+    "subtitle": "A complete sales workspace — from first lead to signed quote.",
+    "pipeline": {
+      "title": "Visual Pipeline Management",
+      "description": "Drag deals across stages, spot bottlenecks instantly, and keep your whole team aligned on what to close next."
+    },
+    "leads": {
+      "title": "Smart Lead Capture",
+      "description": "Capture, score, and qualify leads from any source. Convert the best ones to contacts and opportunities in one click."
+    },
+    "followup": {
+      "title": "Follow-up You Won't Forget",
+      "description": "Tasks, reminders, and activity tracking make sure no deal goes cold. Get alerts when deals need attention."
+    },
+    "quotes": {
+      "title": "Professional Quotes",
+      "description": "Create, send, and track quotes with line items, taxes, and PDF export. Link them directly to opportunities."
+    },
+    "forecast": {
+      "title": "Forecast & Reports",
+      "description": "Real-time pipeline value, win rate, and monthly forecast. Know exactly where your revenue is coming from."
+    },
+    "ai": {
+      "title": "AI Sales Assistant",
+      "description": "Get AI-powered summaries, next step suggestions, and follow-up drafts — right where you're working."
+    }
+  },
+  "pricing": {
+    "title": "Simple, predictable pricing",
+    "subtitle": "No per-seat surprises. Pick the plan that fits your team.",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "save": "Save 20%",
+    "faq": {
+      "title": "Frequently asked questions",
+      "trial": {
+        "q": "Is there a free trial?",
+        "a": "Yes. Every plan starts with a 14-day free trial. No credit card required."
+      },
+      "cancel": {
+        "q": "Can I cancel anytime?",
+        "a": "Absolutely. Cancel anytime from your billing settings. No lock-in."
+      },
+      "upgrade": {
+        "q": "Can I upgrade or downgrade later?",
+        "a": "Yes. You can change your plan at any time and we'll prorate the difference."
+      },
+      "data": {
+        "q": "What happens to my data if I cancel?",
+        "a": "Your data is yours. You can export everything before cancelling."
+      }
+    }
+  },
+  "useCases": {
+    "title": "Built for teams like yours",
+    "founderLed": {
+      "title": "Founder-led Sales",
+      "description": "You're the sales team. LeadForge keeps you focused on the right leads without getting lost in spreadsheets."
+    },
+    "salesTeam": {
+      "title": "Small Sales Teams",
+      "description": "Give your reps a shared workspace with clear ownership, pipeline visibility, and no duplicated effort."
+    },
+    "agencies": {
+      "title": "Agencies & Consultancies",
+      "description": "Manage your new business pipeline alongside your client work. Quote fast, close faster."
+    }
+  },
+  "demo": {
+    "title": "See LeadForge in action",
+    "subtitle": "Book a 20-minute demo and we'll show you how LeadForge can fit your team's workflow.",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Work Email",
+      "company": "Company",
+      "teamSize": "Team Size",
+      "submit": "Book Demo",
+      "success": "Thanks! We'll be in touch within 1 business day.",
+      "teamSizes": {
+        "1": "Just me",
+        "2_5": "2–5 people",
+        "6_15": "6–15 people",
+        "16_plus": "16+ people"
+      }
+    }
+  },
+  "blogPage": {
+    "title": "Blog",
+    "subtitle": "Practical ideas for pipeline discipline and revenue growth.",
+    "post1Title": "Pipeline hygiene that actually sticks",
+    "post1Excerpt": "Weekly rituals and CRM habits that keep deals moving without burying your team in admin.",
+    "post2Title": "Forecasting without the spreadsheet chaos",
+    "post2Excerpt": "How to align stage definitions, probabilities, and rep accountability.",
+    "post3Title": "Onboarding reps to your process in one week",
+    "post3Excerpt": "Checklists, shadowing, and LeadForge workflows that reduce ramp time."
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "about": "About",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "security": "Security",
+    "copyright": "© {year} LeadForge. All rights reserved."
+  },
+  "cta": {
+    "title": "Ready to close more deals?",
+    "subtitle": "Join hundreds of sales teams using LeadForge to hit their numbers.",
+    "primary": "Start Free Trial",
+    "secondary": "Talk to Sales"
+  }
+}
