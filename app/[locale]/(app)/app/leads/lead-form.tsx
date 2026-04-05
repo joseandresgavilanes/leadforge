@@ -97,6 +97,11 @@ export default function LeadForm({
           <Input id="phone" {...register('phone')} />
         </div>
       </div>
+      {errors.email?.message && (
+        <p className="text-xs text-destructive">
+          {errors.email.message === 'emailOrPhone' ? t('validation.emailOrPhone') : errors.email.message}
+        </p>
+      )}
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
           <Label htmlFor="company">{t('fields.company')}</Label>

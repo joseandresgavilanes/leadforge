@@ -212,6 +212,8 @@ export async function convertLead(input: {
   createContact: boolean
   createCompany: boolean
   createOpportunity: boolean
+  existingContactId?: string | null
+  existingCompanyId?: string | null
   opportunityName?: string
   opportunityValue?: number
   stageId?: string
@@ -231,7 +233,9 @@ export async function convertLead(input: {
     let companyId: string | undefined
     let opportunityId: string | undefined
 
-    if (validated.createCompany && lead.company) {
+    if (validated.existingCompanyId) {
+      companyId = validated.existingCompanyId
+    } else if (validated.createCompany && lead.company) {
       const { data: company } = await supabase
         .from('companies')
         .insert({
@@ -247,7 +251,16 @@ export async function convertLead(input: {
       companyId = company?.id
     }
 
-    if (validated.createContact) {
+    if (validated.existingContactId) {
+      contactId = validated.existingContactId
+      if (companyId) {
+        await supabase
+          .from('contacts')
+          .update({ company_id: companyId, updated_at: new Date().toISOString() })
+          .eq('id', contactId)
+          .eq('organization_id', org.id)
+      }
+    } else if (validated.createContact) {
       const { data: contact } = await supabase
         .from('contacts')
         .insert({
@@ -268,6 +281,35 @@ export async function convertLead(input: {
       contactId = contact?.id
     }
 
+    if (contactId) {
+      await supabase
+        .from('notes')
+        .update({ lead_id: null, contact_id: contactId })
+        .eq('lead_id', validated.leadId)
+        .eq('organization_id', org.id)
+      await supabase
+        .from('activities')
+        .update({ lead_id: null, contact_id: contactId })
+        .eq('lead_id', validated.leadId)
+        .eq('organization_id', org.id)
+      await supabase
+        .from('tasks')
+        .update({ lead_id: null, contact_id: contactId })
+        .eq('lead_id', validated.leadId)
+        .eq('organization_id', org.id)
+    }
+
+    let oppCompanyId = companyId
+    if (!oppCompanyId && contactId) {
+      const { data: c } = await supabase
+        .from('contacts')
+        .select('company_id')
+        .eq('id', contactId)
+        .eq('organization_id', org.id)
+        .single()
+      oppCompanyId = c?.company_id ?? undefined
+    }
+
     const stageIdForOpp = validated.stageId
     if (validated.createOpportunity && stageIdForOpp) {
       const { data: opp } = await supabase
@@ -279,7 +321,7 @@ export async function convertLead(input: {
           stage_id: stageIdForOpp,
           probability: 20,
           contact_id: contactId ?? null,
-          company_id: companyId ?? null,
+          company_id: oppCompanyId ?? null,
           owner_id: lead.owner_id,
           source: lead.source,
           created_by: user.id,
@@ -289,7 +331,6 @@ export async function convertLead(input: {
       opportunityId = opp?.id
     }
 
-    // Mark lead as converted
     await supabase
       .from('leads')
       .update({
@@ -309,14 +350,24 @@ export async function convertLead(input: {
       action: AUDIT_ACTIONS.LEAD_CONVERTED,
       entityType: 'lead',
       entityId: validated.leadId,
-      metadata: { contactId, companyId, opportunityId },
+      metadata: {
+        contactId,
+        companyId,
+        opportunityId,
+        existingContact: !!validated.existingContactId,
+        existingCompany: !!validated.existingCompanyId,
+      },
     })
 
     await trackEvent('lead_converted', { organizationId: org.id, userId: user.id })
 
     revalidatePath('/[locale]/app/leads', 'page')
+    revalidatePath(`/[locale]/app/leads/${validated.leadId}`, 'page')
     revalidatePath('/[locale]/app/contacts', 'page')
     revalidatePath('/[locale]/app/opportunities', 'page')
+    if (contactId) revalidatePath(`/[locale]/app/contacts/${contactId}`, 'page')
+    if (companyId) revalidatePath(`/[locale]/app/companies/${companyId}`, 'page')
+    if (opportunityId) revalidatePath(`/[locale]/app/opportunities/${opportunityId}`, 'page')
 
     return { success: true, data: { contactId, companyId, opportunityId } }
   } catch (err) {

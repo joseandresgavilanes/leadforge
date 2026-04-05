@@ -141,7 +141,9 @@ export type OpportunitiesRow = {
   source: string | null
   next_action: string | null
   lost_reason: string | null
+  competitor: string | null
   notes: string | null
+  closed_at: string | null
   created_by: string | null
   created_at: string
   updated_at: string
@@ -191,7 +193,7 @@ export type QuotesRow = {
   opportunity_id: string | null
   contact_id: string | null
   company_id: string | null
-  status: 'draft' | 'sent' | 'accepted' | 'rejected' | 'expired'
+  status: 'draft' | 'sent' | 'viewed' | 'accepted' | 'rejected' | 'expired' | 'cancelled'
   issue_date: string
   expiry_date: string | null
   subtotal: number
@@ -259,6 +261,17 @@ export type AnalyticsEventsRow = {
   user_id: string | null
   event: string
   properties: Json
+  created_at: string
+}
+
+export type ImportRunsRow = {
+  id: string
+  organization_id: string
+  created_by: string | null
+  entity_type: 'leads' | 'contacts' | 'companies' | 'opportunities'
+  file_name: string | null
+  dry_run: boolean
+  summary: Json
   created_at: string
 }
 
@@ -655,6 +668,20 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: 'invitations_organization_id_fkey',
+            columns: ['organization_id'],
+            isOneToOne: false,
+            referencedRelation: 'organizations',
+            referencedColumns: ['id'],
+          },
+        ]
+      }
+      import_runs: {
+        Row: ImportRunsRow
+        Insert: TableInsertShort<ImportRunsRow>
+        Update: never
+        Relationships: [
+          {
+            foreignKeyName: 'import_runs_organization_id_fkey',
             columns: ['organization_id'],
             isOneToOne: false,
             referencedRelation: 'organizations',

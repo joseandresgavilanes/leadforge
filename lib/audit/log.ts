@@ -56,6 +56,12 @@ export const AUDIT_ACTIONS = {
   QUOTE_CREATED: 'quote.created',
   QUOTE_SENT: 'quote.sent',
   QUOTE_ACCEPTED: 'quote.accepted',
+  QUOTE_VIEWED: 'quote.viewed',
+  QUOTE_CANCELLED: 'quote.cancelled',
+  DATA_IMPORTED: 'data.imported',
+  CONTACT_MERGED: 'contact.merged',
+  COMPANY_MERGED: 'company.merged',
+  LEAD_MERGED: 'lead.merged',
   // Team
   MEMBER_INVITED: 'member.invited',
   MEMBER_REMOVED: 'member.removed',

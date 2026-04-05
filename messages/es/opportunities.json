@@ -15,5 +15,19 @@
     "followUpDraft": "Borrador de correo de seguimiento",
     "meetingSummary": "Resumen de reunión",
     "generating": "Generando..."
+  },
+  "stageMove": {
+    "field": "Etapa",
+    "success": "Etapa actualizada.",
+    "lostTitle": "Marcar como perdida",
+    "lostDescription": "Indica la razón de pérdida para higiene del pipeline y reportes.",
+    "wonTitle": "Marcar como ganada",
+    "wonDescription": "Las notas opcionales se añaden al registro de la oportunidad.",
+    "regressionTitle": "Reabrir oportunidad",
+    "regressionDescription": "Volver a una etapa abierta requiere una breve justificación.",
+    "lostReason": "Razón de pérdida",
+    "competitor": "Competidor (opcional)",
+    "closeNotes": "Notas de cierre (opcional)",
+    "regressionReason": "Motivo de reapertura"
   }
 }

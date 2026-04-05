@@ -14,13 +14,20 @@
     "paid_ads": "Anuncios pagados", "other": "Otro"
   },
   "statuses": { "new": "Nuevo", "contacted": "Contactado", "qualified": "Calificado", "unqualified": "No calificado", "converted": "Convertido" },
+  "validation": {
+    "emailOrPhone": "Indica al menos un email o teléfono para que el registro sea contactable."
+  },
   "convert": {
     "title": "Convertir Lead",
     "description": "Convierte este lead en un Contacto, Empresa y/u Oportunidad.",
     "createContact": "Crear Contacto", "createCompany": "Crear Empresa", "createOpportunity": "Crear Oportunidad",
     "opportunityName": "Nombre de Oportunidad", "opportunityValue": "Valor Estimado",
     "stage": "Etapa del pipeline",
-    "success": "Lead convertido exitosamente."
+    "success": "Lead convertido exitosamente.",
+    "existingContact": "Vincular contacto existente",
+    "existingCompany": "Vincular empresa existente",
+    "selectContact": "Seleccionar contacto",
+    "selectCompany": "Seleccionar empresa"
   },
   "score": { "hot": "Caliente", "warm": "Tibio", "cold": "Frío" },
   "empty": { "title": "Sin leads aún", "description": "Captura tu primer lead para comenzar a llenar tu pipeline.", "cta": "Agregar Lead" },

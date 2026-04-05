@@ -1,0 +1,11 @@
+{
+  "title": "Línea de tiempo",
+  "empty": "Aún no hay actividad registrada.",
+  "kinds": {
+    "note": "Nota",
+    "activity": "Actividad",
+    "task": "Tarea",
+    "audit": "Auditoría",
+    "quote": "Cotización"
+  }
+}

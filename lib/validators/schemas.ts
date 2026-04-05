@@ -45,11 +45,18 @@ export const organizationSchema = z.object({
 })
 
 // --- Lead ---
-export const leadSchema = z.object({
+export const leadSchema = z
+  .object({
   firstName: z.string().min(1).max(50),
   lastName: z.string().max(50).optional().nullable(),
-  email: z.string().email().optional().nullable(),
-  phone: z.string().max(30).optional().nullable(),
+  email: z.preprocess(
+    (v) => (v === '' || v === undefined || v === null ? null : String(v).trim()),
+    z.string().email().nullable().optional()
+  ),
+  phone: z.preprocess(
+    (v) => (v === '' || v === undefined || v === null ? null : String(v).trim()),
+    z.string().max(30).nullable().optional()
+  ),
   company: z.string().max(100).optional().nullable(),
   jobTitle: z.string().max(100).optional().nullable(),
   source: z.string().max(50).optional().nullable(),
@@ -64,17 +71,47 @@ export const leadSchema = z.object({
   ),
   industry: z.string().max(50).optional().nullable(),
   budget: z.number().min(0).optional().nullable(),
-})
+  })
+  .refine((d) => !!(d.email && d.email.length > 0) || !!(d.phone && d.phone.length > 0), {
+    message: 'emailOrPhone',
+    path: ['email'],
+  })
 
-export const convertLeadSchema = z.object({
+export const convertLeadSchema = z
+  .object({
   leadId: z.string().uuid(),
   createContact: z.boolean().default(true),
   createCompany: z.boolean().default(false),
   createOpportunity: z.boolean().default(false),
+  existingContactId: z.string().uuid().optional().nullable(),
+  existingCompanyId: z.string().uuid().optional().nullable(),
   opportunityName: z.string().max(200).optional(),
   opportunityValue: z.number().min(0).optional(),
   stageId: z.string().uuid().optional(),
-})
+  })
+  .superRefine((data, ctx) => {
+    if (!data.createContact && !data.existingContactId) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'existingContactRequired',
+        path: ['existingContactId'],
+      })
+    }
+    if (data.createContact && data.existingContactId) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'contactChoiceConflict',
+        path: ['existingContactId'],
+      })
+    }
+    if (data.createCompany && data.existingCompanyId) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'companyChoiceConflict',
+        path: ['existingCompanyId'],
+      })
+    }
+  })
 
 // --- Contact ---
 export const contactSchema = z.object({
@@ -133,7 +170,14 @@ export const opportunitySchema = z.object({
 export const moveOpportunityStageSchema = z.object({
   opportunityId: z.string().uuid(),
   stageId: z.string().uuid(),
+  previousStageId: z.string().uuid(),
+  lostReason: z.string().max(500).optional().nullable(),
+  competitor: z.string().max(200).optional().nullable(),
+  closeNotes: z.string().max(2000).optional().nullable(),
+  regressionReason: z.string().max(500).optional().nullable(),
 })
+
+export type MoveOpportunityStageInput = z.infer<typeof moveOpportunityStageSchema>
 
 // --- Activity ---
 export const activitySchema = z.object({
@@ -175,7 +219,9 @@ export const quoteSchema = z.object({
   opportunityId: z.string().uuid().optional().nullable(),
   contactId: z.string().uuid().optional().nullable(),
   companyId: z.string().uuid().optional().nullable(),
-  status: z.enum(['draft', 'sent', 'accepted', 'rejected', 'expired']).default('draft'),
+  status: z
+    .enum(['draft', 'sent', 'viewed', 'accepted', 'rejected', 'expired', 'cancelled'])
+    .default('draft'),
   issueDate: z.string(),
   expiryDate: z.string().optional().nullable(),
   taxRate: z.number().min(0).max(100).default(0),

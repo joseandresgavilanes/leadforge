@@ -5,7 +5,7 @@ import { locales, type Locale } from './config'
 export default getRequestConfig(async ({ locale }) => {
   if (!locales.includes(locale as Locale)) notFound()
 
-  const [common, auth, dashboard, leads, contacts, companies, opportunities, tasks, activities, quotes, reports, billing, team, settings, marketing, legal] =
+  const [common, auth, dashboard, leads, contacts, companies, opportunities, tasks, activities, quotes, reports, billing, team, settings, marketing, legal, timeline, dataHygiene] =
     await Promise.all([
       import(`@/messages/${locale}/common.json`),
       import(`@/messages/${locale}/auth.json`),
@@ -23,6 +23,8 @@ export default getRequestConfig(async ({ locale }) => {
       import(`@/messages/${locale}/settings.json`),
       import(`@/messages/${locale}/marketing.json`),
       import(`@/messages/${locale}/legal.json`),
+      import(`@/messages/${locale}/timeline.json`),
+      import(`@/messages/${locale}/dataHygiene.json`),
     ])
 
   return {
@@ -43,6 +45,8 @@ export default getRequestConfig(async ({ locale }) => {
       settings: settings.default,
       marketing: marketing.default,
       legal: legal.default,
+      timeline: timeline.default,
+      dataHygiene: dataHygiene.default,
     },
     timeZone: 'UTC',
     now: new Date(),

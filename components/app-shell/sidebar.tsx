@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import {
   LayoutDashboard, Users, Building2, Contact, TrendingUp,
   CheckSquare, Activity, FileText, BarChart3, Settings,
-  CreditCard, UserCog, Zap, X, Menu,
+  CreditCard, UserCog, Zap, X, Menu, Database,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
@@ -45,6 +45,7 @@ export function AppSidebar({ locale, orgName, open, onClose }: SidebarProps) {
   const settingsItems: NavItem[] = [
     { label: t('team'), href: `${base}/team`, icon: UserCog },
     { label: t('settings'), href: `${base}/settings`, icon: Settings },
+    { label: t('dataHygiene'), href: `${base}/settings/data`, icon: Database },
     { label: t('billing'), href: `${base}/billing`, icon: CreditCard },
   ]
 

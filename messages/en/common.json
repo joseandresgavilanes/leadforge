@@ -25,9 +25,11 @@
       "reports": "Reports",
       "team": "Team",
       "settings": "Settings",
+      "dataHygiene": "Data & import",
       "billing": "Billing"
     }
   },
+  "loading": "Loading…",
   "actions": {
     "save": "Save",
     "cancel": "Cancel",

@@ -42,7 +42,9 @@
     "downloadPdf": "Download PDF",
     "duplicate": "Duplicate",
     "markAccepted": "Mark as Accepted",
-    "markRejected": "Mark as Rejected"
+    "markRejected": "Mark as Rejected",
+    "markViewed": "Mark as Viewed",
+    "cancel": "Cancel Quote"
   },
   "empty": {
     "title": "No quotes yet",

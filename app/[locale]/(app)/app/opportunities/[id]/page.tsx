@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import OpportunityForm from '../opportunity-form'
 import OpportunityStageMover from './opportunity-stage-mover'
 import OpportunityAiPanel from './opportunity-ai-panel'
+import { EntityTimeline } from '@/components/crm/entity-timeline'
 
 export default async function OpportunityDetailPage({
   params,
@@ -69,6 +70,8 @@ export default async function OpportunityDetailPage({
         </div>
         <OpportunityAiPanel context={aiContext} />
       </div>
+
+      <EntityTimeline entity="opportunity" entityId={id} locale={locale} />
     </div>
   )
 }

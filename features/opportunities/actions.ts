@@ -10,7 +10,12 @@ import {
 } from '@/lib/mock/demo-dataset'
 import { requireAuth, getActiveOrganization } from '@/lib/auth/server'
 import { requirePermission } from '@/lib/rbac/permissions'
-import { opportunitySchema, type OpportunityInput } from '@/lib/validators/schemas'
+import {
+  opportunitySchema,
+  moveOpportunityStageSchema,
+  type OpportunityInput,
+  type MoveOpportunityStageInput,
+} from '@/lib/validators/schemas'
 import { createAuditLog, AUDIT_ACTIONS } from '@/lib/audit/log'
 import { trackEvent } from '@/lib/analytics/track'
 import type { ActionResult, OpportunityFilters, PaginatedResult, OpportunityWithStage } from '@/types'
@@ -197,41 +202,126 @@ export async function updateOpportunity(id: string, input: Partial<OpportunityIn
 }
 
 export async function moveOpportunityStage(
-  opportunityId: string,
-  stageId: string,
-  previousStageId: string
+  input: MoveOpportunityStageInput
 ): Promise<ActionResult<void>> {
   try {
+    const validated = moveOpportunityStageSchema.parse(input)
     const { user, org, membership } = await getContext()
     requirePermission(membership.role, 'opportunities:update')
 
     const supabase = await tryCreateClient()
     if (!supabase) return { success: false, error: OFFLINE_ACTION_ERROR }
 
+    const { data: stageRows, error: stageErr } = await supabase
+      .from('opportunity_stages')
+      .select('id,name,is_closed_won,is_closed_lost,probability')
+      .eq('organization_id', org.id)
+      .in('id', [validated.stageId, validated.previousStageId])
+
+    if (stageErr) return { success: false, error: stageErr.message }
+    const target = stageRows?.find((s) => s.id === validated.stageId)
+    const previous = stageRows?.find((s) => s.id === validated.previousStageId)
+    if (!target) return { success: false, error: 'Stage not found' }
+
+    const wasClosed = !!(previous && (previous.is_closed_won || previous.is_closed_lost))
+    const movingToOpen = !target.is_closed_won && !target.is_closed_lost
+    if (wasClosed && movingToOpen && !validated.regressionReason?.trim()) {
+      return { success: false, error: 'Regression reason is required when reopening a closed deal.' }
+    }
+
+    if (target.is_closed_lost && !validated.lostReason?.trim()) {
+      return { success: false, error: 'Lost reason is required for Closed Lost.' }
+    }
+
+    const now = new Date().toISOString()
+
+    const { data: oppSnap, error: snapErr } = await supabase
+      .from('opportunities')
+      .select('notes')
+      .eq('id', validated.opportunityId)
+      .eq('organization_id', org.id)
+      .single()
+    if (snapErr) return { success: false, error: snapErr.message }
+
+    let notes = oppSnap?.notes ?? ''
+    if (
+      (target.is_closed_won || target.is_closed_lost) &&
+      validated.closeNotes?.trim()
+    ) {
+      notes = `${notes}\n\n[${now}] ${validated.closeNotes.trim()}`.trim()
+    }
+
+    const updatePayload: Record<string, unknown> = {
+      stage_id: validated.stageId,
+      probability: target.probability,
+      notes,
+      updated_at: now,
+    }
+
+    if (target.is_closed_won || target.is_closed_lost) {
+      updatePayload.closed_at = now
+    } else {
+      updatePayload.closed_at = null
+      updatePayload.lost_reason = null
+      updatePayload.competitor = null
+    }
+
+    if (target.is_closed_won) {
+      updatePayload.probability = 100
+    }
+    if (target.is_closed_lost) {
+      updatePayload.probability = 0
+      updatePayload.lost_reason = validated.lostReason!.trim()
+      updatePayload.competitor = validated.competitor?.trim() ?? null
+    }
+
     const { error } = await supabase
       .from('opportunities')
-      .update({ stage_id: stageId, updated_at: new Date().toISOString() })
-      .eq('id', opportunityId)
+      .update(updatePayload)
+      .eq('id', validated.opportunityId)
       .eq('organization_id', org.id)
 
     if (error) return { success: false, error: error.message }
+
+    const activityLines = [
+      validated.regressionReason?.trim(),
+      target.is_closed_lost ? `Lost reason: ${validated.lostReason?.trim()}` : null,
+      validated.competitor?.trim() ? `Competitor: ${validated.competitor.trim()}` : null,
+    ].filter(Boolean) as string[]
+
+    await supabase.from('activities').insert({
+      organization_id: org.id,
+      type: 'note',
+      subject: `Stage: ${previous?.name ?? '—'} → ${target.name}`,
+      description: activityLines.length ? activityLines.join('\n') : null,
+      opportunity_id: validated.opportunityId,
+      activity_date: now,
+      created_by: user.id,
+    })
 
     await createAuditLog({
       organizationId: org.id,
       actorId: user.id,
       action: AUDIT_ACTIONS.OPPORTUNITY_STAGE_CHANGED,
       entityType: 'opportunity',
-      entityId: opportunityId,
-      metadata: { previousStageId, newStageId: stageId },
+      entityId: validated.opportunityId,
+      metadata: {
+        previousStageId: validated.previousStageId,
+        newStageId: validated.stageId,
+        lostReason: target.is_closed_lost ? validated.lostReason : undefined,
+        competitor: target.is_closed_lost ? validated.competitor : undefined,
+        regressionReason: validated.regressionReason,
+      },
     })
 
     await trackEvent('opportunity_stage_changed', {
       organizationId: org.id,
       userId: user.id,
-      properties: { opportunityId, stageId },
+      properties: { opportunityId: validated.opportunityId, stageId: validated.stageId },
     })
 
     revalidatePath('/[locale]/app/opportunities', 'page')
+    revalidatePath(`/[locale]/app/opportunities/${validated.opportunityId}`, 'page')
     return { success: true, data: undefined }
   } catch (err) {
     return { success: false, error: err instanceof Error ? err.message : 'Unknown error' }

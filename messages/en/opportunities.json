@@ -59,5 +59,19 @@
     "followUpDraft": "Follow-up email draft",
     "meetingSummary": "Meeting summary",
     "generating": "Generating..."
+  },
+  "stageMove": {
+    "field": "Stage",
+    "success": "Stage updated.",
+    "lostTitle": "Mark as Closed Lost",
+    "lostDescription": "Provide a loss reason for pipeline hygiene and reporting.",
+    "wonTitle": "Mark as Closed Won",
+    "wonDescription": "Optional notes are appended to the opportunity record.",
+    "regressionTitle": "Reopen deal",
+    "regressionDescription": "Moving back to an open stage requires a short reason.",
+    "lostReason": "Lost reason",
+    "competitor": "Competitor (optional)",
+    "closeNotes": "Closing notes (optional)",
+    "regressionReason": "Reason for reopening"
   }
 }

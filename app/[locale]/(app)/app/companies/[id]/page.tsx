@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { getCompanyById, getContacts } from '@/features/contacts/actions'
 import { Button } from '@/components/ui/button'
 import CompanyForm from '../company-form'
+import { EntityTimeline } from '@/components/crm/entity-timeline'
 
 export default async function CompanyDetailPage({
   params,
@@ -48,6 +49,8 @@ export default async function CompanyDetailPage({
           )}
         </ul>
       </div>
+
+      <EntityTimeline entity="company" entityId={id} locale={locale} />
     </div>
   )
 }

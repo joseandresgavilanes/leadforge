@@ -1,0 +1,11 @@
+{
+  "title": "Timeline",
+  "empty": "No activity recorded yet.",
+  "kinds": {
+    "note": "Note",
+    "activity": "Activity",
+    "task": "Task",
+    "audit": "Audit",
+    "quote": "Quote"
+  }
+}

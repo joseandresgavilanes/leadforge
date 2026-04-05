@@ -25,9 +25,11 @@
       "reports": "Reportes",
       "team": "Equipo",
       "settings": "Configuración",
+      "dataHygiene": "Datos e importación",
       "billing": "Facturación"
     }
   },
+  "loading": "Cargando…",
   "actions": {
     "save": "Guardar",
     "cancel": "Cancelar",

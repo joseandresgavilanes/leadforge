@@ -3,6 +3,8 @@ import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import { getLeadById } from '@/features/leads/actions'
 import { getPipelineStages } from '@/features/opportunities/actions'
+import { getContacts, getCompanies } from '@/features/contacts/actions'
+import { EntityTimeline } from '@/components/crm/entity-timeline'
 import { Badge } from '@/components/ui/data-display'
 import { Button } from '@/components/ui/button'
 import LeadForm from '../lead-form'
@@ -14,9 +16,11 @@ export default async function LeadDetailPage({
   params: Promise<{ locale: string; id: string }>
 }) {
   const { locale, id } = await params
-  const [lead, stages, t, tc] = await Promise.all([
+  const [lead, stages, contactsRes, companiesRes, t, tc] = await Promise.all([
     getLeadById(id),
     getPipelineStages(),
+    getContacts(undefined, 1, 400),
+    getCompanies(undefined, 1, 400),
     getTranslations('leads'),
     getTranslations('common'),
   ])
@@ -25,6 +29,15 @@ export default async function LeadDetailPage({
 
   const statuses = t.raw('statuses') as Record<string, string>
   const statusLabel = statuses[lead.status] ?? lead.status
+
+  const contactOptions = contactsRes.data.map((c) => ({
+    id: c.id,
+    label: `${c.first_name} ${c.last_name ?? ''}`.trim() + (c.email ? ` · ${c.email}` : ''),
+  }))
+  const companyOptions = companiesRes.data.map((c: { id: string; name: string }) => ({
+    id: c.id,
+    label: c.name,
+  }))
 
   return (
     <div className="space-y-6 max-w-3xl">
@@ -48,8 +61,16 @@ export default async function LeadDetailPage({
       <LeadForm locale={locale} lead={lead} />
 
       {lead.status !== 'converted' && (
-        <ConvertLeadForm locale={locale} leadId={lead.id} stages={stages} />
+        <ConvertLeadForm
+          locale={locale}
+          leadId={lead.id}
+          stages={stages}
+          contactOptions={contactOptions}
+          companyOptions={companyOptions}
+        />
       )}
+
+      <EntityTimeline entity="lead" entityId={id} locale={locale} />
     </div>
   )
 }

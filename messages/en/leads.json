@@ -42,6 +42,9 @@
     "unqualified": "Unqualified",
     "converted": "Converted"
   },
+  "validation": {
+    "emailOrPhone": "Provide at least one of email or phone so the record is reachable."
+  },
   "convert": {
     "title": "Convert Lead",
     "description": "Convert this lead into a Contact, Company, and/or Opportunity.",
@@ -51,7 +54,11 @@
     "opportunityName": "Opportunity Name",
     "opportunityValue": "Estimated Value",
     "stage": "Opportunity stage",
-    "success": "Lead converted successfully."
+    "success": "Lead converted successfully.",
+    "existingContact": "Link existing contact",
+    "existingCompany": "Link existing company",
+    "selectContact": "Select contact",
+    "selectCompany": "Select company"
   },
   "score": {
     "hot": "Hot",

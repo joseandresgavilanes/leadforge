@@ -157,7 +157,7 @@ export async function createQuote(input: QuoteInput): Promise<ActionResult<{ id:
 
 export async function updateQuoteStatus(
   id: string,
-  status: 'draft' | 'sent' | 'accepted' | 'rejected' | 'expired'
+  status: 'draft' | 'sent' | 'viewed' | 'accepted' | 'rejected' | 'expired' | 'cancelled'
 ): Promise<ActionResult<void>> {
   try {
     const { user, org, membership } = await getContext()
@@ -187,6 +187,22 @@ export async function updateQuoteStatus(
         organizationId: org.id,
         actorId: user.id,
         action: AUDIT_ACTIONS.QUOTE_ACCEPTED,
+        entityType: 'quote',
+        entityId: id,
+      })
+    } else if (status === 'viewed') {
+      await createAuditLog({
+        organizationId: org.id,
+        actorId: user.id,
+        action: AUDIT_ACTIONS.QUOTE_VIEWED,
+        entityType: 'quote',
+        entityId: id,
+      })
+    } else if (status === 'cancelled') {
+      await createAuditLog({
+        organizationId: org.id,
+        actorId: user.id,
+        action: AUDIT_ACTIONS.QUOTE_CANCELLED,
         entityType: 'quote',
         entityId: id,
       })

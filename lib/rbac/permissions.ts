@@ -1,6 +1,6 @@
 import type { OrgRole } from '@/types'
 
-type Permission =
+export type Permission =
   | 'leads:create'
   | 'leads:read'
   | 'leads:update'
@@ -40,6 +40,8 @@ type Permission =
   | 'billing:manage'
   | 'pipeline:configure'
   | 'audit:read'
+  | 'data:import'
+  | 'data:merge'
 
 const ROLE_PERMISSIONS: Record<OrgRole, Permission[]> = {
   org_admin: [
@@ -56,6 +58,8 @@ const ROLE_PERMISSIONS: Record<OrgRole, Permission[]> = {
     'billing:read', 'billing:manage',
     'pipeline:configure',
     'audit:read',
+    'data:import',
+    'data:merge',
   ],
   sales_manager: [
     'leads:create', 'leads:read', 'leads:update', 'leads:delete', 'leads:convert',
@@ -69,6 +73,7 @@ const ROLE_PERMISSIONS: Record<OrgRole, Permission[]> = {
     'team:read', 'team:invite',
     'settings:read',
     'billing:read',
+    'data:import',
   ],
   sales_rep: [
     'leads:create', 'leads:read', 'leads:update', 'leads:convert',
