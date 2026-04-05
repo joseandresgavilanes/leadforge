@@ -1,0 +1,106 @@
+{
+  "inbox": {
+    "title": "Sales inbox",
+    "subtitle": "Log calls, meetings, and emails on a timeline ready for future sync.",
+    "newThread": "New thread",
+    "empty": "No conversations yet. Start a thread from a lead, contact, or deal.",
+    "subject": "Subject",
+    "linkRecord": "Link to CRM record",
+    "leadId": "Lead ID",
+    "contactId": "Contact ID",
+    "opportunityId": "Opportunity ID",
+    "companyId": "Company ID",
+    "recordId": "Record ID",
+    "linkRequired": "Link the thread to a CRM record.",
+    "create": "Create thread",
+    "logMessage": "Log touchpoint",
+    "direction": "Direction",
+    "channel": "Channel",
+    "inbound": "Inbound",
+    "outbound": "Outbound",
+    "body": "Message / notes",
+    "templates": "Templates",
+    "snippets": "Snippets",
+    "messageLogged": "Touchpoint logged",
+    "channels": {
+      "email": "Email",
+      "call": "Call",
+      "meeting": "Meeting",
+      "demo": "Demo",
+      "note": "Note"
+    },
+    "pickTemplate": "Use template"
+  },
+  "sequences": {
+    "title": "Sequences",
+    "subtitle": "Multi-step follow-ups that create tasks and logged emails.",
+    "new": "New sequence",
+    "name": "Name",
+    "description": "Description",
+    "steps": "Steps",
+    "addStep": "Add step",
+    "stepType": "Step type",
+    "email": "Email",
+    "task": "Task",
+    "wait": "Wait",
+    "emailSubject": "Email subject",
+    "emailBody": "Email body",
+    "taskTitle": "Task title",
+    "taskDueDays": "Due in (days)",
+    "waitHours": "Wait (hours)",
+    "enrollments": "Enrollments",
+    "enroll": "Enroll record",
+    "enrolledToast": "Enrollment created",
+    "advance": "Run next step",
+    "pause": "Pause",
+    "resume": "Resume",
+    "cancel": "Cancel enrollment",
+    "status": {
+      "active": "Active",
+      "paused": "Paused",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "emptyList": "No sequences yet. Create one to automate follow-ups.",
+    "emptySteps": "Add steps to define this cadence.",
+    "emptyEnrollments": "No enrollments for this sequence yet.",
+    "colStatus": "Status",
+    "colStep": "Step",
+    "colNext": "Next run",
+    "colActions": "Actions",
+    "stepLabels": {
+      "email": "Email",
+      "task": "Task",
+      "wait": "Wait"
+    },
+    "exitOnTerminal": "Auto-complete when linked deal reaches Closed Won/Lost"
+  },
+  "savedViews": {
+    "title": "Saved views",
+    "saveCurrent": "Save current filters",
+    "viewName": "View name",
+    "save": "Save view",
+    "saved": "View saved",
+    "delete": "Remove",
+    "shared": "Shared with org",
+    "defaultHint": "Pinned views appear first.",
+    "allLeads": "All leads",
+    "viewsForList": "Views"
+  },
+  "governance": {
+    "title": "Deal governance",
+    "daysInStage": "{days} days in stage",
+    "reasons": {
+      "closeDatePast": "Close date is in the past",
+      "missingNextStep": "No next step captured",
+      "longStage": "Long time in current stage",
+      "staleTouch": "No recent updates",
+      "highValueStale": "High value — needs executive touch"
+    },
+    "levels": {
+      "healthy": "On track",
+      "at_risk": "Needs attention",
+      "critical": "At risk"
+    }
+  }
+}

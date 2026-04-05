@@ -16,6 +16,7 @@
   },
   "widgets": {
     "overdueTasks": "Overdue Tasks",
+    "tasksDueToday": "Due Today",
     "staleDeals": "Deals Without Activity",
     "staleDescription": "No activity in the last {days} days",
     "recentActivity": "Recent Activity",
@@ -30,6 +31,7 @@
   },
   "empty": {
     "noTasks": "No overdue tasks. You're on track!",
+    "noTasksDueToday": "Nothing due today. Check open tasks for what's next.",
     "noStaleDeals": "All deals have recent activity.",
     "noActivity": "No recent activity. Start adding leads and opportunities."
   }

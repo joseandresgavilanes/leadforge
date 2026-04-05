@@ -1,6 +1,70 @@
 {
   "hero": { "badge": "CRM construido para equipos de ventas reales", "title": "Nunca pierdas un lead ni un seguimiento importante", "subtitle": "LeadForge le da a tu equipo comercial un CRM enfocado y rápido para capturar leads, mover deals y cerrar más ingresos — sin la complejidad de las herramientas empresariales.", "ctaPrimary": "Prueba Gratis", "ctaSecondary": "Ver demo", "noCard": "Sin tarjeta de crédito. 14 días gratis." },
-  "trust": { "title": "Confiado por equipos comerciales en crecimiento", "metrics": { "leads": "Leads gestionados", "deals": "Deals cerrados", "teams": "Equipos en todo el mundo", "uptime": "SLA de disponibilidad" } },
+  "trust": {
+    "title": "Diseñado para operaciones comerciales serias",
+    "subtitle": "Un espacio enfocado para disciplina en el pipeline, cotizaciones y responsabilidad del equipo.",
+    "bullets": {
+      "pipeline": "Gobernanza del pipeline con higiene de etapas y señales de salud del deal",
+      "followup": "Tareas, actividades, secuencias y bandeja de ventas para interacciones reales",
+      "quotes": "Cotizaciones y oportunidades vinculadas de punta a punta",
+      "team": "Roles, reportes y paneles útiles para managers"
+    }
+  },
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "description": "Para equipos pequeños que se toman el pipeline en serio.",
+      "price": "$29",
+      "cta": "Empezar prueba",
+      "features": [
+        "Hasta 3 usuarios",
+        "Leads, contactos, empresas y deals",
+        "Tareas, actividades y cotizaciones",
+        "Vistas guardadas e informes básicos",
+        "Soporte por correo"
+      ]
+    },
+    "growth": {
+      "name": "Growth",
+      "description": "Para equipos que escalan sin peso enterprise.",
+      "price": "$79",
+      "cta": "Empezar prueba",
+      "features": [
+        "Hasta 10 usuarios",
+        "Secuencias y bandeja de ventas",
+        "Flujos preparados para automatización",
+        "Informes avanzados y exportaciones",
+        "Soporte prioritario"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Para equipos de ingresos SMB más grandes y gobernanza estricta.",
+      "price": "A medida",
+      "cta": "Hablemos",
+      "features": [
+        "Usuarios ilimitados (uso razonable)",
+        "Campos personalizados y reglas de asignación",
+        "Hub de integraciones y arquitectura lista para API",
+        "Auditoría y herramientas de datos",
+        "Onboarding dedicado"
+      ]
+    }
+  },
+  "pages": {
+    "pipeline": {
+      "title": "Un pipeline que puedes gobernar",
+      "body": "Definiciones de etapa, criterios de salida, señales de deals estancados y vistas para managers ayudan a tu equipo a ejecutar un forecast disciplinado — no solo mover tarjetas."
+    },
+    "automation": {
+      "title": "Automatización que apoya a los reps",
+      "body": "Secuencias, reglas de flujo ligeras y ganchos de enrutamiento reducen el seguimiento manual sin convertir el CRM en un laboratorio de scripts."
+    },
+    "integrations": {
+      "title": "Conecta tu stack de ingresos",
+      "body": "LeadForge está estructurado para integraciones de correo, calendario, facturación y webhooks, con estados de conexión claros en un único directorio."
+    }
+  },
   "features": {
     "title": "Todo lo que tu equipo necesita para cerrar más deals",
     "subtitle": "Un espacio de trabajo de ventas completo — desde el primer lead hasta la cotización firmada.",
@@ -13,7 +77,8 @@
   },
   "pricing": {
     "title": "Precios simples y predecibles", "subtitle": "Sin sorpresas por asiento. Elige el plan que se ajusta a tu equipo.",
-    "monthly": "Mensual", "annual": "Anual", "save": "Ahorra 20%",
+    "perMonth": "/mes",
+    "monthly": "Mensual", "annual": "Anual", "save": "Más popular",
     "faq": { "title": "Preguntas frecuentes", "trial": { "q": "¿Hay prueba gratuita?", "a": "Sí. Cada plan comienza con 14 días gratis. Sin tarjeta de crédito." }, "cancel": { "q": "¿Puedo cancelar en cualquier momento?", "a": "Absolutamente. Cancela cuando quieras desde tu configuración de facturación. Sin permanencia." }, "upgrade": { "q": "¿Puedo cambiar de plan más tarde?", "a": "Sí. Puedes cambiar tu plan en cualquier momento y prorratearemos la diferencia." }, "data": { "q": "¿Qué pasa con mis datos si cancelo?", "a": "Tus datos son tuyos. Puedes exportar todo antes de cancelar." } }
   },
   "useCases": {
@@ -33,6 +98,6 @@
     "post3Excerpt": "Listas de verificación y flujos LeadForge que reducen el tiempo de ramp-up."
   },
   "demo": { "title": "Ve LeadForge en acción", "subtitle": "Reserva una demo de 20 minutos y te mostraremos cómo LeadForge puede encajar en el flujo de trabajo de tu equipo.", "form": { "firstName": "Nombre", "lastName": "Apellido", "email": "Correo laboral", "company": "Empresa", "teamSize": "Tamaño del equipo", "submit": "Reservar Demo", "success": "¡Gracias! Te contactaremos en 1 día hábil.", "teamSizes": { "1": "Solo yo", "2_5": "2–5 personas", "6_15": "6–15 personas", "16_plus": "16+ personas" } } },
-  "footer": { "product": "Producto", "company": "Empresa", "legal": "Legal", "about": "Acerca de", "blog": "Blog", "careers": "Empleo", "contact": "Contacto", "privacy": "Política de Privacidad", "terms": "Términos de Servicio", "security": "Seguridad", "copyright": "© {year} LeadForge. Todos los derechos reservados." },
-  "cta": { "title": "¿Listo para cerrar más deals?", "subtitle": "Únete a cientos de equipos de ventas que usan LeadForge para alcanzar sus metas.", "primary": "Prueba Gratis", "secondary": "Hablar con Ventas" }
+  "footer": { "tagline": "El CRM enfocado para equipos en crecimiento — pipeline, seguimiento y cotizaciones en un solo lugar.", "product": "Producto", "company": "Empresa", "legal": "Legal", "about": "Acerca de", "blog": "Blog", "careers": "Empleo", "contact": "Contacto", "privacy": "Política de Privacidad", "terms": "Términos de Servicio", "security": "Seguridad", "copyright": "© {year} LeadForge. Todos los derechos reservados." },
+  "cta": { "title": "¿Listo para cerrar más deals?", "subtitle": "Un solo espacio para control del pipeline, disciplina de seguimiento y cotizaciones.", "primary": "Prueba Gratis", "secondary": "Hablar con Ventas" }
 }

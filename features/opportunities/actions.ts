@@ -115,6 +115,7 @@ export async function createOpportunity(input: OpportunityInput): Promise<Action
     const supabase = await tryCreateClient()
     if (!supabase) return { success: false, error: OFFLINE_ACTION_ERROR }
 
+    const now = new Date().toISOString()
     const { data, error } = await supabase
       .from('opportunities')
       .insert({
@@ -131,6 +132,7 @@ export async function createOpportunity(input: OpportunityInput): Promise<Action
         next_action: validated.nextAction ?? null,
         notes: validated.notes ?? null,
         created_by: user.id,
+        stage_entered_at: now,
       })
       .select('id')
       .single()

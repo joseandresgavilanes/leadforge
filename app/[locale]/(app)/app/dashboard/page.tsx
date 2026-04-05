@@ -1,10 +1,16 @@
 import { getTranslations } from 'next-intl/server'
-import { getDashboardStats, getOverdueTasks, getStaleOpportunities, getRecentActivities } from '@/features/analytics/dashboard'
+import {
+  getDashboardStats,
+  getOverdueTasks,
+  getTasksDueToday,
+  getStaleOpportunities,
+  getRecentActivities,
+} from '@/features/analytics/dashboard'
 import { formatCurrency, formatRelative } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/data-display'
 import { Badge } from '@/components/ui/data-display'
 import { Button } from '@/components/ui/button'
-import { TrendingUp, TrendingDown, Users, DollarSign, Target, AlertCircle, Plus, Zap, CheckSquare, Activity } from 'lucide-react'
+import { TrendingUp, TrendingDown, DollarSign, Target, AlertCircle, Plus, Zap, CheckSquare, Activity, CalendarClock } from 'lucide-react'
 import Link from 'next/link'
 
 export default async function DashboardPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -12,9 +18,10 @@ export default async function DashboardPage({ params }: { params: Promise<{ loca
   const t = await getTranslations('dashboard')
   const tc = await getTranslations('common')
 
-  const [stats, overdueTasks, staleOpps, recentActivities] = await Promise.all([
+  const [stats, overdueTasks, dueTodayTasks, staleOpps, recentActivities] = await Promise.all([
     getDashboardStats(),
     getOverdueTasks(5),
+    getTasksDueToday(6),
     getStaleOpportunities(14, 5),
     getRecentActivities(8),
   ])
@@ -69,7 +76,7 @@ export default async function DashboardPage({ params }: { params: Promise<{ loca
       </div>
 
       {/* Main Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         {/* Overdue Tasks */}
         <Card>
           <CardHeader className="pb-3">
@@ -102,6 +109,45 @@ export default async function DashboardPage({ params }: { params: Promise<{ loca
             <Link href={`${base}/tasks?filter=overdue`}>
               <Button variant="ghost" size="sm" className="w-full mt-3">
                 {tc('actions.view')} {t('widgets.overdueTasks')}
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
+
+        {/* Due today */}
+        <Card>
+          <CardHeader className="pb-3">
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-base flex items-center gap-2">
+                <CalendarClock className="h-4 w-4 text-primary" />
+                {t('widgets.tasksDueToday')}
+              </CardTitle>
+              {dueTodayTasks.length > 0 && (
+                <Badge variant="secondary">{dueTodayTasks.length}</Badge>
+              )}
+            </div>
+          </CardHeader>
+          <CardContent>
+            {dueTodayTasks.length === 0 ? (
+              <p className="text-sm text-muted-foreground py-4 text-center">{t('empty.noTasksDueToday')}</p>
+            ) : (
+              <ul className="space-y-2">
+                {dueTodayTasks.map((task: any) => (
+                  <li key={task.id} className="flex items-start gap-2 py-1.5 border-b last:border-0">
+                    <CheckSquare className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium truncate">{task.title}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {task.due_date ? formatRelative(task.due_date, locale) : '—'}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <Link href={`${base}/tasks?filter=due_today`}>
+              <Button variant="ghost" size="sm" className="w-full mt-3">
+                {tc('actions.view')} {t('widgets.tasksDueToday')}
               </Button>
             </Link>
           </CardContent>

@@ -1,0 +1,106 @@
+{
+  "inbox": {
+    "title": "Bandeja de ventas",
+    "subtitle": "Registra llamadas, reuniones y correos en una línea de tiempo preparada para sincronización futura.",
+    "newThread": "Nuevo hilo",
+    "empty": "Aún no hay conversaciones. Abre un hilo desde un lead, contacto u oportunidad.",
+    "subject": "Asunto",
+    "linkRecord": "Vincular a registro CRM",
+    "leadId": "ID de lead",
+    "contactId": "ID de contacto",
+    "opportunityId": "ID de oportunidad",
+    "companyId": "ID de empresa",
+    "recordId": "ID del registro",
+    "linkRequired": "Vincula el hilo a un registro del CRM.",
+    "create": "Crear hilo",
+    "logMessage": "Registrar interacción",
+    "direction": "Dirección",
+    "channel": "Canal",
+    "inbound": "Entrante",
+    "outbound": "Saliente",
+    "body": "Mensaje / notas",
+    "templates": "Plantillas",
+    "snippets": "Fragmentos",
+    "messageLogged": "Interacción registrada",
+    "channels": {
+      "email": "Correo",
+      "call": "Llamada",
+      "meeting": "Reunión",
+      "demo": "Demo",
+      "note": "Nota"
+    },
+    "pickTemplate": "Usar plantilla"
+  },
+  "sequences": {
+    "title": "Secuencias",
+    "subtitle": "Seguimientos en varios pasos que crean tareas y correos registrados.",
+    "new": "Nueva secuencia",
+    "name": "Nombre",
+    "description": "Descripción",
+    "steps": "Pasos",
+    "addStep": "Añadir paso",
+    "stepType": "Tipo de paso",
+    "email": "Correo",
+    "task": "Tarea",
+    "wait": "Espera",
+    "emailSubject": "Asunto del correo",
+    "emailBody": "Cuerpo del correo",
+    "taskTitle": "Título de la tarea",
+    "taskDueDays": "Vence en (días)",
+    "waitHours": "Espera (horas)",
+    "enrollments": "Inscripciones",
+    "enroll": "Inscribir registro",
+    "enrolledToast": "Inscripción creada",
+    "advance": "Ejecutar siguiente paso",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "cancel": "Cancelar inscripción",
+    "status": {
+      "active": "Activa",
+      "paused": "Pausada",
+      "completed": "Completada",
+      "cancelled": "Cancelada"
+    },
+    "emptyList": "Aún no hay secuencias. Crea una para automatizar seguimientos.",
+    "emptySteps": "Añade pasos para definir esta cadencia.",
+    "emptyEnrollments": "Sin inscripciones en esta secuencia.",
+    "colStatus": "Estado",
+    "colStep": "Paso",
+    "colNext": "Próxima ejecución",
+    "colActions": "Acciones",
+    "stepLabels": {
+      "email": "Correo",
+      "task": "Tarea",
+      "wait": "Espera"
+    },
+    "exitOnTerminal": "Completar automáticamente si el deal llega a Ganado/Perdido"
+  },
+  "savedViews": {
+    "title": "Vistas guardadas",
+    "saveCurrent": "Guardar filtros actuales",
+    "viewName": "Nombre de la vista",
+    "save": "Guardar vista",
+    "saved": "Vista guardada",
+    "delete": "Eliminar",
+    "shared": "Compartida con la org",
+    "defaultHint": "Las vistas fijadas aparecen primero.",
+    "allLeads": "Todos los leads",
+    "viewsForList": "Vistas"
+  },
+  "governance": {
+    "title": "Gobernanza del deal",
+    "daysInStage": "{days} días en etapa",
+    "reasons": {
+      "closeDatePast": "La fecha de cierre ya pasó",
+      "missingNextStep": "Sin próximo paso definido",
+      "longStage": "Mucho tiempo en la etapa actual",
+      "staleTouch": "Sin actualizaciones recientes",
+      "highValueStale": "Alto valor — requiere seguimiento ejecutivo"
+    },
+    "levels": {
+      "healthy": "En curso",
+      "at_risk": "Requiere atención",
+      "critical": "En riesgo"
+    }
+  }
+}

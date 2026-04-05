@@ -148,7 +148,7 @@ export interface OpportunityFilters {
 }
 
 export interface TaskFilters {
-  status?: 'open' | 'completed' | 'overdue'
+  status?: 'open' | 'completed' | 'overdue' | 'due_today'
   priority?: Task['priority']
   ownerId?: string
   search?: string

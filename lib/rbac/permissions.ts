@@ -42,6 +42,12 @@ export type Permission =
   | 'audit:read'
   | 'data:import'
   | 'data:merge'
+  | 'communications:read'
+  | 'communications:manage'
+  | 'sequences:read'
+  | 'sequences:manage'
+  | 'views:read'
+  | 'views:manage'
 
 const ROLE_PERMISSIONS: Record<OrgRole, Permission[]> = {
   org_admin: [
@@ -60,6 +66,12 @@ const ROLE_PERMISSIONS: Record<OrgRole, Permission[]> = {
     'audit:read',
     'data:import',
     'data:merge',
+    'communications:read',
+    'communications:manage',
+    'sequences:read',
+    'sequences:manage',
+    'views:read',
+    'views:manage',
   ],
   sales_manager: [
     'leads:create', 'leads:read', 'leads:update', 'leads:delete', 'leads:convert',
@@ -74,6 +86,12 @@ const ROLE_PERMISSIONS: Record<OrgRole, Permission[]> = {
     'settings:read',
     'billing:read',
     'data:import',
+    'communications:read',
+    'communications:manage',
+    'sequences:read',
+    'sequences:manage',
+    'views:read',
+    'views:manage',
   ],
   sales_rep: [
     'leads:create', 'leads:read', 'leads:update', 'leads:convert',
@@ -86,6 +104,12 @@ const ROLE_PERMISSIONS: Record<OrgRole, Permission[]> = {
     'team:read',
     'settings:read',
     'billing:read',
+    'communications:read',
+    'communications:manage',
+    'sequences:read',
+    'sequences:manage',
+    'views:read',
+    'views:manage',
   ],
   viewer: [
     'leads:read',
@@ -99,6 +123,9 @@ const ROLE_PERMISSIONS: Record<OrgRole, Permission[]> = {
     'team:read',
     'settings:read',
     'billing:read',
+    'communications:read',
+    'sequences:read',
+    'views:read',
   ],
 }
 

@@ -144,6 +144,7 @@ export type OpportunitiesRow = {
   competitor: string | null
   notes: string | null
   closed_at: string | null
+  stage_entered_at: string
   created_by: string | null
   created_at: string
   updated_at: string
@@ -273,6 +274,110 @@ export type ImportRunsRow = {
   dry_run: boolean
   summary: Json
   created_at: string
+}
+
+export type CommunicationThreadsRow = {
+  id: string
+  organization_id: string
+  subject: string
+  lead_id: string | null
+  contact_id: string | null
+  company_id: string | null
+  opportunity_id: string | null
+  last_message_at: string
+  created_by: string | null
+  created_at: string
+  updated_at: string
+}
+
+export type CommunicationMessagesRow = {
+  id: string
+  thread_id: string
+  direction: 'inbound' | 'outbound'
+  channel: 'email' | 'call' | 'meeting' | 'demo' | 'note'
+  subject: string | null
+  body: string
+  external_ref: string | null
+  logged_at: string
+  created_by: string | null
+  created_at: string
+}
+
+export type EmailTemplatesRow = {
+  id: string
+  organization_id: string
+  name: string
+  category: string | null
+  subject: string
+  body: string
+  created_by: string | null
+  created_at: string
+  updated_at: string
+}
+
+export type EmailSnippetsRow = {
+  id: string
+  organization_id: string
+  name: string
+  shortcut: string | null
+  body: string
+  created_by: string | null
+  created_at: string
+  updated_at: string
+}
+
+export type SequencesRow = {
+  id: string
+  organization_id: string
+  name: string
+  description: string | null
+  active: boolean
+  exit_on_terminal_stage: boolean
+  created_by: string | null
+  created_at: string
+  updated_at: string
+}
+
+export type SequenceStepsRow = {
+  id: string
+  sequence_id: string
+  position: number
+  step_type: 'email' | 'task' | 'wait'
+  email_subject: string | null
+  email_body: string | null
+  task_title: string | null
+  task_due_days: number | null
+  wait_hours: number
+}
+
+export type SequenceEnrollmentsRow = {
+  id: string
+  organization_id: string
+  sequence_id: string
+  lead_id: string | null
+  contact_id: string | null
+  opportunity_id: string | null
+  status: 'active' | 'paused' | 'completed' | 'cancelled'
+  current_step_index: number
+  next_run_at: string
+  enrolled_by: string | null
+  created_at: string
+  updated_at: string
+}
+
+export type SavedViewsRow = {
+  id: string
+  organization_id: string
+  user_id: string
+  entity_type: 'leads' | 'contacts' | 'companies' | 'opportunities' | 'tasks' | 'quotes'
+  name: string
+  is_shared: boolean
+  is_pinned: boolean
+  filters: Json
+  sort: Json | null
+  columns: Json | null
+  created_at: string
+  updated_at: string
 }
 
 type StripMeta<T extends Record<string, unknown>> = Omit<T, 'id' | 'created_at' | 'updated_at'>
@@ -688,6 +793,54 @@ export type Database = {
             referencedColumns: ['id'],
           },
         ]
+      }
+      communication_threads: {
+        Row: CommunicationThreadsRow
+        Insert: TableInsert<CommunicationThreadsRow>
+        Update: Partial<TableInsert<CommunicationThreadsRow>>
+        Relationships: []
+      }
+      communication_messages: {
+        Row: CommunicationMessagesRow
+        Insert: TableInsertShort<Omit<CommunicationMessagesRow, 'created_at'>>
+        Update: Partial<TableInsertShort<CommunicationMessagesRow>>
+        Relationships: []
+      }
+      email_templates: {
+        Row: EmailTemplatesRow
+        Insert: TableInsert<EmailTemplatesRow>
+        Update: Partial<TableInsert<EmailTemplatesRow>>
+        Relationships: []
+      }
+      email_snippets: {
+        Row: EmailSnippetsRow
+        Insert: TableInsert<EmailSnippetsRow>
+        Update: Partial<TableInsert<EmailSnippetsRow>>
+        Relationships: []
+      }
+      sequences: {
+        Row: SequencesRow
+        Insert: TableInsert<SequencesRow>
+        Update: Partial<TableInsert<SequencesRow>>
+        Relationships: []
+      }
+      sequence_steps: {
+        Row: SequenceStepsRow
+        Insert: TableInsertShort<SequenceStepsRow>
+        Update: Partial<TableInsertShort<SequenceStepsRow>>
+        Relationships: []
+      }
+      sequence_enrollments: {
+        Row: SequenceEnrollmentsRow
+        Insert: TableInsert<SequenceEnrollmentsRow>
+        Update: Partial<TableInsert<SequenceEnrollmentsRow>>
+        Relationships: []
+      }
+      saved_views: {
+        Row: SavedViewsRow
+        Insert: TableInsert<SavedViewsRow>
+        Update: Partial<TableInsert<SavedViewsRow>>
+        Relationships: []
       }
       analytics_events: {
         Row: AnalyticsEventsRow

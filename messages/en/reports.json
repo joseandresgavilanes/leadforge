@@ -9,7 +9,9 @@
     "overdueFollowUps": "Overdue Follow-ups",
     "winRate": "Win Rate",
     "avgDealSize": "Avg Deal Size",
-    "avgSalesCycle": "Avg Sales Cycle"
+    "avgSalesCycle": "Avg Sales Cycle",
+    "forecastWeightedLabel": "Weighted pipeline value",
+    "forecastWeightedHint": "Based on probability × deal value"
   },
   "filters": {
     "dateRange": "Date Range",

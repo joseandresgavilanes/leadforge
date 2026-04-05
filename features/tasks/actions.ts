@@ -9,6 +9,7 @@ import { requirePermission } from '@/lib/rbac/permissions'
 import { taskSchema, activitySchema, type TaskInput, type ActivityInput } from '@/lib/validators/schemas'
 import { createAuditLog, AUDIT_ACTIONS } from '@/lib/audit/log'
 import { trackEvent } from '@/lib/analytics/track'
+import { startOfDay, endOfDay } from 'date-fns'
 import type { ActionResult, TaskFilters, TaskWithRelations } from '@/types'
 
 async function getContext() {
@@ -42,6 +43,10 @@ export async function getTasks(filters: TaskFilters = {}) {
     query = query.not('completed_at', 'is', null)
   } else if (filters.status === 'overdue') {
     query = query.is('completed_at', null).lt('due_date', new Date().toISOString())
+  } else if (filters.status === 'due_today') {
+    const start = startOfDay(new Date()).toISOString()
+    const end = endOfDay(new Date()).toISOString()
+    query = query.is('completed_at', null).gte('due_date', start).lte('due_date', end)
   } else if (filters.status === 'open') {
     query = query.is('completed_at', null)
   }

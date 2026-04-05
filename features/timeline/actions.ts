@@ -2,13 +2,13 @@
 
 import { tryCreateClient } from '@/lib/db/server'
 import { requireAuth, getActiveOrganization } from '@/lib/auth/server'
-import { requirePermission, type Permission } from '@/lib/rbac/permissions'
+import { hasPermission, requirePermission, type Permission } from '@/lib/rbac/permissions'
 
 export type TimelineEntity = 'lead' | 'contact' | 'company' | 'opportunity'
 
 export type TimelineEvent = {
   id: string
-  kind: 'note' | 'activity' | 'task' | 'audit' | 'quote'
+  kind: 'note' | 'activity' | 'task' | 'audit' | 'quote' | 'communication'
   title: string
   subtitle: string | null
   occurredAt: string
@@ -88,7 +88,24 @@ export async function getEntityTimeline(
           .eq('opportunity_id', entityId)
       : Promise.resolve({ data: [] as QuoteTimelineRow[] })
 
-  const [notesRes, activitiesRes, tasksRes, auditRes, quotesRes] = await Promise.all([
+  const commsReadable = hasPermission(orgData.membership.role, 'communications:read')
+  const commsPromise = commsReadable
+    ? (async () => {
+        const { data: threads } = await supabase
+          .from('communication_threads')
+          .select('id')
+          .eq('organization_id', orgId)
+          .eq(fk, entityId)
+        const tids = (threads ?? []).map((t) => t.id)
+        if (tids.length === 0) return { data: [] as { id: string; channel: string; direction: string; subject: string | null; body: string; logged_at: string; created_by: string | null }[] }
+        return supabase
+          .from('communication_messages')
+          .select('id,channel,direction,subject,body,logged_at,created_by')
+          .in('thread_id', tids)
+      })()
+    : Promise.resolve({ data: [] as { id: string; channel: string; direction: string; subject: string | null; body: string; logged_at: string; created_by: string | null }[] })
+
+  const [notesRes, activitiesRes, tasksRes, auditRes, quotesRes, commsRes] = await Promise.all([
     supabase.from('notes').select('*').eq('organization_id', orgId).eq(fk, entityId),
     supabase.from('activities').select('*').eq('organization_id', orgId).eq(fk, entityId),
     supabase.from('tasks').select('*').eq('organization_id', orgId).eq(fk, entityId),
@@ -99,6 +116,7 @@ export async function getEntityTimeline(
       .eq('entity_id', entityId)
       .eq('entity_type', entity),
     quotesPromise,
+    commsPromise,
   ])
 
   const actorIds = new Set<string>()
@@ -114,6 +132,9 @@ export async function getEntityTimeline(
   }
   for (const l of auditRes.data ?? []) {
     if (l.actor_id) actorIds.add(l.actor_id)
+  }
+  for (const c of commsRes.data ?? []) {
+    if (c.created_by) actorIds.add(c.created_by)
   }
 
   let profilesMap = new Map<string, { first_name: string | null; last_name: string | null }>()
@@ -182,6 +203,17 @@ export async function getEntityTimeline(
       subtitle: q.status,
       occurredAt: q.updated_at,
       actorName: null,
+    })
+  }
+
+  for (const c of commsRes.data ?? []) {
+    events.push({
+      id: `comm-${c.id}`,
+      kind: 'communication',
+      title: (c.subject?.trim() || c.channel).slice(0, 120),
+      subtitle: `${c.direction} · ${c.channel}`,
+      occurredAt: c.logged_at,
+      actorName: actorLabel(profilesMap, c.created_by),
     })
   }
 

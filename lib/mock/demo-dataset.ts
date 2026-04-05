@@ -1,4 +1,4 @@
-import { endOfMonth, startOfMonth, subMonths } from 'date-fns'
+import { endOfDay, endOfMonth, startOfDay, startOfMonth, subMonths } from 'date-fns'
 import { MOCK_ORG_ID, MOCK_USER_ID } from '@/lib/mock/demo-entities'
 import { paginateArray } from '@/lib/mock/pagination'
 import type {
@@ -27,6 +27,12 @@ function daysAgo(n: number): string {
   const d = new Date()
   d.setDate(d.getDate() - n)
   d.setHours(15, 30, 0, 0)
+  return d.toISOString()
+}
+
+function todayAt(hour: number, minute = 0): string {
+  const d = new Date()
+  d.setHours(hour, minute, 0, 0)
   return d.toISOString()
 }
 
@@ -78,6 +84,7 @@ export const DEMO_IDS = {
   task2: 'a6000000-0000-4000-8000-000000000002',
   task3: 'a6000000-0000-4000-8000-000000000003',
   task4: 'a6000000-0000-4000-8000-000000000004',
+  taskDueToday: 'a6000000-0000-4000-8000-000000000005',
   act1: 'a7000000-0000-4000-8000-000000000001',
   quote1: 'a8000000-0000-4000-8000-000000000001',
   quote2: 'a8000000-0000-4000-8000-000000000002',
@@ -468,6 +475,7 @@ function baseOpp(p: Partial<Opportunity> & Pick<Opportunity, 'id' | 'name' | 'va
     competitor: null,
     notes: null,
     closed_at: null,
+    stage_entered_at: daysAgo(10),
     created_by: MOCK_USER_ID,
     created_at: daysAgo(30),
     updated_at: daysAgo(2),
@@ -644,6 +652,13 @@ function demoTasksRows(): Task[] {
       completed_at: hoursAgo(6),
       opportunity_id: DEMO_IDS.opp3,
     }),
+    baseTask({
+      id: DEMO_IDS.taskDueToday,
+      title: 'Send recap email — discovery call',
+      priority: 'medium',
+      due_date: todayAt(16, 0),
+      opportunity_id: DEMO_IDS.opp1,
+    }),
   ]
 }
 
@@ -672,6 +687,10 @@ export function getDemoTasks(orgId: string, filters: TaskFilters = {}): TaskWith
   } else if (filters.status === 'overdue') {
     const now = new Date().toISOString()
     rows = rows.filter((t) => !t.completed_at && t.due_date && t.due_date < now)
+  } else if (filters.status === 'due_today') {
+    const start = startOfDay(new Date()).toISOString()
+    const end = endOfDay(new Date()).toISOString()
+    rows = rows.filter((t) => !t.completed_at && t.due_date && t.due_date >= start && t.due_date <= end)
   } else if (filters.status === 'open') {
     rows = rows.filter((t) => t.completed_at === null)
   }
@@ -798,6 +817,20 @@ export function getDemoOverdueTasks(orgId: string, limit: number) {
   const now = new Date().toISOString()
   return demoTasksRows()
     .filter((t) => !t.completed_at && t.due_date && t.due_date < now)
+    .sort((a, b) => (a.due_date ?? '').localeCompare(b.due_date ?? ''))
+    .slice(0, limit)
+    .map((t) => ({
+      ...t,
+      owner: ownerPickShort(),
+    }))
+}
+
+export function getDemoTasksDueToday(orgId: string, limit: number) {
+  if (!isDemoOrg(orgId)) return []
+  const start = startOfDay(new Date()).toISOString()
+  const end = endOfDay(new Date()).toISOString()
+  return demoTasksRows()
+    .filter((t) => !t.completed_at && t.due_date && t.due_date >= start && t.due_date <= end)
     .sort((a, b) => (a.due_date ?? '').localeCompare(b.due_date ?? ''))
     .slice(0, limit)
     .map((t) => ({

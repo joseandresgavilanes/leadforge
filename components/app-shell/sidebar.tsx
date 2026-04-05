@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import {
   LayoutDashboard, Users, Building2, Contact, TrendingUp,
   CheckSquare, Activity, FileText, BarChart3, Settings,
-  CreditCard, UserCog, Zap, X, Menu, Database,
+  CreditCard, UserCog, Zap, X, Menu, Database, Inbox, ListOrdered,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
@@ -36,6 +36,8 @@ export function AppSidebar({ locale, orgName, open, onClose }: SidebarProps) {
     { label: t('contacts'), href: `${base}/contacts`, icon: Contact },
     { label: t('companies'), href: `${base}/companies`, icon: Building2 },
     { label: t('opportunities'), href: `${base}/opportunities`, icon: TrendingUp },
+    { label: t('inbox'), href: `${base}/inbox`, icon: Inbox },
+    { label: t('sequences'), href: `${base}/sequences`, icon: ListOrdered },
     { label: t('tasks'), href: `${base}/tasks`, icon: CheckSquare },
     { label: t('activities'), href: `${base}/activities`, icon: Activity },
     { label: t('quotes'), href: `${base}/quotes`, icon: FileText },

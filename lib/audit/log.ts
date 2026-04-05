@@ -62,6 +62,12 @@ export const AUDIT_ACTIONS = {
   CONTACT_MERGED: 'contact.merged',
   COMPANY_MERGED: 'company.merged',
   LEAD_MERGED: 'lead.merged',
+  COMM_THREAD_CREATED: 'communication.thread_created',
+  COMM_MESSAGE_LOGGED: 'communication.message_logged',
+  SEQUENCE_CREATED: 'sequence.created',
+  SEQUENCE_ENROLLED: 'sequence.enrolled',
+  SEQUENCE_STEP_ADVANCED: 'sequence.step_advanced',
+  SAVED_VIEW_CREATED: 'saved_view.created',
   // Team
   MEMBER_INVITED: 'member.invited',
   MEMBER_REMOVED: 'member.removed',

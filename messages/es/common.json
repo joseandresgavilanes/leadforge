@@ -1,6 +1,9 @@
 {
   "nav": {
     "features": "Funcionalidades",
+    "pipeline": "Pipeline",
+    "automation": "Automatización",
+    "integrations": "Integraciones",
     "pricing": "Precios",
     "useCases": "Casos de Uso",
     "demo": "Demo",
@@ -23,6 +26,8 @@
       "activities": "Actividades",
       "quotes": "Cotizaciones",
       "reports": "Reportes",
+      "inbox": "Bandeja",
+      "sequences": "Secuencias",
       "team": "Equipo",
       "settings": "Configuración",
       "dataHygiene": "Datos e importación",

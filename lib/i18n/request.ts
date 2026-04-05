@@ -1,33 +1,44 @@
 import { getRequestConfig } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { locales, type Locale } from './config'
+import { defaultLocale, locales, type Locale } from './config'
 
-export default getRequestConfig(async ({ locale }) => {
-  if (!locales.includes(locale as Locale)) notFound()
+export default getRequestConfig(async ({ requestLocale }) => {
+  let locale = await requestLocale
 
-  const [common, auth, dashboard, leads, contacts, companies, opportunities, tasks, activities, quotes, reports, billing, team, settings, marketing, legal, timeline, dataHygiene] =
+  if (locale && !locales.includes(locale as Locale)) {
+    notFound()
+  }
+  if (!locale) {
+    locale = defaultLocale
+  }
+
+  const loc = locale as Locale
+
+  const [common, auth, dashboard, leads, contacts, companies, opportunities, tasks, activities, quotes, reports, billing, team, settings, marketing, legal, timeline, dataHygiene, workspace] =
     await Promise.all([
-      import(`@/messages/${locale}/common.json`),
-      import(`@/messages/${locale}/auth.json`),
-      import(`@/messages/${locale}/dashboard.json`),
-      import(`@/messages/${locale}/leads.json`),
-      import(`@/messages/${locale}/contacts.json`),
-      import(`@/messages/${locale}/companies.json`),
-      import(`@/messages/${locale}/opportunities.json`),
-      import(`@/messages/${locale}/tasks.json`),
-      import(`@/messages/${locale}/activities.json`),
-      import(`@/messages/${locale}/quotes.json`),
-      import(`@/messages/${locale}/reports.json`),
-      import(`@/messages/${locale}/billing.json`),
-      import(`@/messages/${locale}/team.json`),
-      import(`@/messages/${locale}/settings.json`),
-      import(`@/messages/${locale}/marketing.json`),
-      import(`@/messages/${locale}/legal.json`),
-      import(`@/messages/${locale}/timeline.json`),
-      import(`@/messages/${locale}/dataHygiene.json`),
+      import(`@/messages/${loc}/common.json`),
+      import(`@/messages/${loc}/auth.json`),
+      import(`@/messages/${loc}/dashboard.json`),
+      import(`@/messages/${loc}/leads.json`),
+      import(`@/messages/${loc}/contacts.json`),
+      import(`@/messages/${loc}/companies.json`),
+      import(`@/messages/${loc}/opportunities.json`),
+      import(`@/messages/${loc}/tasks.json`),
+      import(`@/messages/${loc}/activities.json`),
+      import(`@/messages/${loc}/quotes.json`),
+      import(`@/messages/${loc}/reports.json`),
+      import(`@/messages/${loc}/billing.json`),
+      import(`@/messages/${loc}/team.json`),
+      import(`@/messages/${loc}/settings.json`),
+      import(`@/messages/${loc}/marketing.json`),
+      import(`@/messages/${loc}/legal.json`),
+      import(`@/messages/${loc}/timeline.json`),
+      import(`@/messages/${loc}/dataHygiene.json`),
+      import(`@/messages/${loc}/workspace.json`),
     ])
 
   return {
+    locale: loc,
     messages: {
       common: common.default,
       auth: auth.default,
@@ -47,6 +58,7 @@ export default getRequestConfig(async ({ locale }) => {
       legal: legal.default,
       timeline: timeline.default,
       dataHygiene: dataHygiene.default,
+      workspace: workspace.default,
     },
     timeZone: 'UTC',
     now: new Date(),

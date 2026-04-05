@@ -312,6 +312,7 @@ export async function convertLead(input: {
 
     const stageIdForOpp = validated.stageId
     if (validated.createOpportunity && stageIdForOpp) {
+      const nowOpp = new Date().toISOString()
       const { data: opp } = await supabase
         .from('opportunities')
         .insert({
@@ -325,6 +326,7 @@ export async function convertLead(input: {
           owner_id: lead.owner_id,
           source: lead.source,
           created_by: user.id,
+          stage_entered_at: nowOpp,
         })
         .select('id')
         .single()

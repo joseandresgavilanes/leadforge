@@ -18,9 +18,15 @@ export default async function TasksPage({
   const t = await getTranslations('tasks')
   const tc = await getTranslations('common')
 
-  const status =
-    sp.filter === 'overdue' ? 'overdue' : sp.filter === 'completed' ? 'completed' : 'open'
-  const tasks = await getTasks({ status: status as 'open' | 'overdue' | 'completed' })
+  const status: 'open' | 'overdue' | 'completed' | 'due_today' =
+    sp.filter === 'overdue'
+      ? 'overdue'
+      : sp.filter === 'completed'
+        ? 'completed'
+        : sp.filter === 'due_today'
+          ? 'due_today'
+          : 'open'
+  const tasks = await getTasks({ status })
   const base = `/${locale}/app`
 
   return (
@@ -34,10 +40,15 @@ export default async function TasksPage({
         </Link>
       </div>
       <div className="flex gap-2 flex-wrap">
-        {(['open', 'overdue', 'completed'] as const).map((f) => (
+        {(['open', 'due_today', 'overdue', 'completed'] as const).map((f) => (
           <Link key={f} href={f === 'open' ? `${base}/tasks` : `${base}/tasks?filter=${f}`}>
-            <Button variant={sp.filter === f || (!sp.filter && f === 'open') ? 'default' : 'outline'} size="sm">
-              {t(`statuses.${f === 'open' ? 'open' : f === 'overdue' ? 'overdue' : 'completed'}`)}
+            <Button
+              variant={
+                (f === 'open' && !sp.filter) || sp.filter === f ? 'default' : 'outline'
+              }
+              size="sm"
+            >
+              {f === 'due_today' ? t('filters.dueToday') : t(`statuses.${f === 'open' ? 'open' : f === 'overdue' ? 'overdue' : 'completed'}`)}
             </Button>
           </Link>
         ))}

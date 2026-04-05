@@ -9,19 +9,9 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   const tc = await getTranslations('common')
 
   const plans = [
-    {
-      key: 'starter',
-      features: ['3 users', '500 leads', '10 quotes/month', 'Pipeline & tasks', 'Email support'],
-    },
-    {
-      key: 'growth',
-      popular: true,
-      features: ['10 users', '5,000 leads', '100 quotes/month', 'Advanced reports', 'AI features', 'Priority support'],
-    },
-    {
-      key: 'pro',
-      features: ['Unlimited users', 'Unlimited leads & quotes', 'Custom fields', 'API access', 'Dedicated support'],
-    },
+    { key: 'starter' as const },
+    { key: 'growth' as const, popular: true },
+    { key: 'pro' as const },
   ]
 
   return (
@@ -59,20 +49,20 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               )}
               <div className="mb-6">
                 <h3 className="font-heading font-bold text-xl text-brand-text-main mb-1">
-                  {(t.raw(`plans.${plan.key}`) as any).name}
+                  {(t.raw(`plans.${plan.key}`) as { name: string }).name}
                 </h3>
                 <p className="text-sm text-brand-text-muted mb-4">
-                  {(t.raw(`plans.${plan.key}`) as any).description}
+                  {(t.raw(`plans.${plan.key}`) as { description: string }).description}
                 </p>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-heading font-bold text-brand-text-main">
-                    {(t.raw(`plans.${plan.key}`) as any).price}
+                    {(t.raw(`plans.${plan.key}`) as { price: string }).price}
                   </span>
-                  <span className="text-brand-text-muted">/month</span>
+                  <span className="text-brand-text-muted">{t('pricing.perMonth')}</span>
                 </div>
               </div>
               <ul className="space-y-3 mb-8">
-                {plan.features.map((f) => (
+                {((t.raw(`plans.${plan.key}`) as { features: string[] }).features ?? []).map((f) => (
                   <li key={f} className="flex items-center gap-2.5 text-sm text-brand-text-main">
                     <CheckCircle className="h-4 w-4 text-brand-accent shrink-0" />
                     {f}
@@ -85,7 +75,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                   variant={plan.popular ? 'default' : 'outline'}
                   size="lg"
                 >
-                  {(t.raw(`plans.${plan.key}`) as any).cta}
+                  {(t.raw(`plans.${plan.key}`) as { cta: string }).cta}
                 </Button>
               </Link>
             </div>

@@ -8,7 +8,7 @@
     "vsLastMonth": "{change}% vs mes anterior", "thisMonth": "Este mes"
   },
   "widgets": {
-    "overdueTasks": "Tareas Vencidas", "staleDeals": "Deals Sin Actividad",
+    "overdueTasks": "Tareas Vencidas", "tasksDueToday": "Para hoy", "staleDeals": "Deals Sin Actividad",
     "staleDescription": "Sin actividad en los últimos {days} días",
     "recentActivity": "Actividad Reciente", "topOpportunities": "Principales Oportunidades",
     "quickActions": "Acciones Rápidas"
@@ -16,6 +16,7 @@
   "quickActions": { "newLead": "Nuevo Lead", "newOpportunity": "Nueva Oportunidad", "newTask": "Nueva Tarea", "newActivity": "Registrar Actividad" },
   "empty": {
     "noTasks": "Sin tareas vencidas. ¡Vas bien!",
+    "noTasksDueToday": "Nada para hoy. Revisa las tareas abiertas para lo siguiente.",
     "noStaleDeals": "Todos los deals tienen actividad reciente.",
     "noActivity": "Sin actividad reciente. Comienza agregando leads y oportunidades."
   }

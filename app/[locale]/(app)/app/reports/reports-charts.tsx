@@ -1,6 +1,7 @@
 'use client'
 
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts'
+import { useTranslations } from 'next-intl'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/data-display'
 import { formatCurrency } from '@/lib/utils'
 
@@ -8,10 +9,10 @@ interface Props {
   leadsBySource: Record<string, number>
   pipelineByStage: { name: string; value: number; count: number; color: string }[]
   forecast: number
-  t: any
 }
 
-export default function ReportsCharts({ leadsBySource, pipelineByStage, forecast, t }: Props) {
+export default function ReportsCharts({ leadsBySource, pipelineByStage, forecast }: Props) {
+  const t = useTranslations('reports')
   const sourceData = Object.entries(leadsBySource).map(([name, count]) => ({
     name: name.replace('_', ' '),
     count,
@@ -88,9 +89,9 @@ export default function ReportsCharts({ leadsBySource, pipelineByStage, forecast
         <CardContent>
           <div className="flex items-center gap-8">
             <div>
-              <p className="text-sm text-muted-foreground">Weighted Pipeline Value</p>
+              <p className="text-sm text-muted-foreground">{t('charts.forecastWeightedLabel')}</p>
               <p className="text-3xl font-heading font-bold text-primary mt-1">{formatCurrency(forecast)}</p>
-              <p className="text-xs text-muted-foreground mt-1">Based on probability × deal value</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('charts.forecastWeightedHint')}</p>
             </div>
             <div className="flex-1">
               <ResponsiveContainer width="100%" height={80}>

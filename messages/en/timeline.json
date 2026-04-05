@@ -6,6 +6,7 @@
     "activity": "Activity",
     "task": "Task",
     "audit": "Audit",
-    "quote": "Quote"
+    "quote": "Quote",
+    "communication": "Communication"
   }
 }

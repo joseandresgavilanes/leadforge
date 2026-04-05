@@ -370,6 +370,7 @@ export async function runCsvImport(params: {
             next_action: raw.nextAction?.trim() || null,
             notes: raw.notes?.trim() || null,
             created_by: user.id,
+            stage_entered_at: new Date().toISOString(),
           })
           if (error) {
             summary.failed++

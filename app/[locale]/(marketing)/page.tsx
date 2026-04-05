@@ -23,6 +23,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="hidden md:flex items-center gap-6">
             {[
               { label: tc('nav.features'), href: `/${locale}/features` },
+              { label: tc('nav.pipeline'), href: `/${locale}/pipeline` },
+              { label: tc('nav.automation'), href: `/${locale}/automation` },
+              { label: tc('nav.integrations'), href: `/${locale}/integrations` },
               { label: tc('nav.pricing'), href: `/${locale}/pricing` },
               { label: tc('nav.useCases'), href: `/${locale}/use-cases` },
               { label: tc('nav.demo'), href: `/${locale}/demo` },
@@ -116,19 +119,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Trust section */}
-      <section className="border-y bg-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm font-semibold text-brand-text-muted uppercase tracking-widest mb-8">{t('trust.title')}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { label: t('trust.metrics.leads'), value: '500K+' },
-              { label: t('trust.metrics.deals'), value: '$2.4B' },
-              { label: t('trust.metrics.teams'), value: '1,200+' },
-              { label: t('trust.metrics.uptime'), value: '99.9%' },
-            ].map((m) => (
-              <div key={m.label}>
-                <p className="text-3xl font-heading font-bold text-brand-primary">{m.value}</p>
-                <p className="text-sm text-brand-text-muted mt-1">{m.label}</p>
+      <section className="border-y bg-white py-16">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
+          <p className="text-sm font-semibold text-brand-text-muted uppercase tracking-widest mb-3">{t('trust.title')}</p>
+          <p className="text-lg text-brand-text-muted mb-10 text-balance">{t('trust.subtitle')}</p>
+          <div className="grid sm:grid-cols-2 gap-5 text-left">
+            {(Object.entries(t.raw('trust.bullets') as Record<string, string>) as [string, string][]).map(([key, text]) => (
+              <div key={key} className="flex gap-3 rounded-xl border border-brand-border bg-brand-bg/40 p-5">
+                <CheckCircle className="h-5 w-5 text-brand-accent shrink-0 mt-0.5" />
+                <p className="text-sm text-brand-text-main leading-relaxed">{text}</p>
               </div>
             ))}
           </div>
@@ -197,7 +196,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <span className="font-heading font-bold text-brand-primary">LeadForge</span>
               </div>
               <p className="text-sm text-brand-text-muted max-w-xs">
-                The focused CRM for growing sales teams.
+                {t('footer.tagline')}
               </p>
             </div>
             <div className="grid grid-cols-3 gap-8 text-sm">
@@ -205,6 +204,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <p className="font-semibold text-brand-text-main mb-3">{t('footer.product')}</p>
                 <ul className="space-y-2 text-brand-text-muted">
                   <li><Link href={`/${locale}/features`} className="hover:text-brand-primary">{tc('nav.features')}</Link></li>
+                  <li><Link href={`/${locale}/pipeline`} className="hover:text-brand-primary">{tc('nav.pipeline')}</Link></li>
+                  <li><Link href={`/${locale}/automation`} className="hover:text-brand-primary">{tc('nav.automation')}</Link></li>
+                  <li><Link href={`/${locale}/integrations`} className="hover:text-brand-primary">{tc('nav.integrations')}</Link></li>
                   <li><Link href={`/${locale}/pricing`} className="hover:text-brand-primary">{tc('nav.pricing')}</Link></li>
                   <li><Link href={`/${locale}/security`} className="hover:text-brand-primary">{tc('nav.security')}</Link></li>
                 </ul>

@@ -6,10 +6,11 @@ import {
   getDemoOverdueTasks,
   getDemoRecentActivities,
   getDemoStaleOpportunities,
+  getDemoTasksDueToday,
 } from '@/lib/mock/demo-dataset'
 import { requireAuth, getActiveOrganization } from '@/lib/auth/server'
 import type { DashboardStats } from '@/types'
-import { startOfMonth, endOfMonth, subMonths, format } from 'date-fns'
+import { startOfMonth, endOfMonth, subMonths, format, startOfDay, endOfDay } from 'date-fns'
 
 export async function getDashboardStats(): Promise<DashboardStats> {
   const user = await requireAuth()
@@ -82,6 +83,30 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     newLeadsChange,
     pipelineChange,
   }
+}
+
+export async function getTasksDueToday(limit = 8) {
+  const user = await requireAuth()
+  const orgData = await getActiveOrganization(user.id)
+  if (!orgData) return []
+
+  const supabase = await tryCreateClient()
+  if (!supabase) return getDemoTasksDueToday(orgData.organization.id, limit)
+
+  const start = startOfDay(new Date()).toISOString()
+  const end = endOfDay(new Date()).toISOString()
+
+  const { data } = await supabase
+    .from('tasks')
+    .select('*, owner:profiles!tasks_owner_id_fkey(id,first_name,last_name)')
+    .eq('organization_id', orgData.organization.id)
+    .is('completed_at', null)
+    .gte('due_date', start)
+    .lte('due_date', end)
+    .order('due_date', { ascending: true })
+    .limit(limit)
+
+  return data ?? []
 }
 
 export async function getOverdueTasks(limit = 5) {

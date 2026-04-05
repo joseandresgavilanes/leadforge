@@ -8,12 +8,68 @@
     "noCard": "No credit card required. 14-day free trial."
   },
   "trust": {
-    "title": "Trusted by growing sales teams",
-    "metrics": {
-      "leads": "Leads managed",
-      "deals": "Deals closed",
-      "teams": "Teams worldwide",
-      "uptime": "Uptime SLA"
+    "title": "Built for operational sales",
+    "subtitle": "A focused workspace for pipeline discipline, quoting, and team accountability.",
+    "bullets": {
+      "pipeline": "Pipeline governance with stage hygiene and deal health signals",
+      "followup": "Tasks, activities, sequences, and a sales inbox for real touchpoints",
+      "quotes": "Quotes and opportunities linked end-to-end",
+      "team": "Roles, reporting, and dashboards managers can actually use"
+    }
+  },
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "description": "For small teams getting serious about pipeline.",
+      "price": "$29",
+      "cta": "Start trial",
+      "features": [
+        "Up to 3 seats",
+        "Leads, contacts, companies & deals",
+        "Tasks, activities & quotes",
+        "Saved views & basic reports",
+        "Email support"
+      ]
+    },
+    "growth": {
+      "name": "Growth",
+      "description": "For teams that need scale without enterprise bloat.",
+      "price": "$79",
+      "cta": "Start trial",
+      "features": [
+        "Up to 10 seats",
+        "Sequences & sales inbox",
+        "Automation-ready workflows",
+        "Advanced reporting & exports",
+        "Priority support"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "For larger SMB revenue teams and tighter governance.",
+      "price": "Custom",
+      "cta": "Talk to us",
+      "features": [
+        "Unlimited seats (fair use)",
+        "Custom fields & routing rules",
+        "Integrations hub & API-ready architecture",
+        "Audit trail & data tools",
+        "Dedicated onboarding"
+      ]
+    }
+  },
+  "pages": {
+    "pipeline": {
+      "title": "Pipeline you can govern",
+      "body": "Stage definitions, exit criteria, stale-deal signals, and manager-ready views help your team run a disciplined forecast — not just move cards on a board."
+    },
+    "automation": {
+      "title": "Automation that supports reps",
+      "body": "Sequences, lightweight workflow rules, and routing hooks are designed to reduce manual follow-up without turning your CRM into a scripting playground."
+    },
+    "integrations": {
+      "title": "Connect your revenue stack",
+      "body": "LeadForge is structured for email, calendar, billing, and webhook integrations so you can meet customers where they work — with clear connection states in one directory."
     }
   },
   "features": {
@@ -47,9 +103,10 @@
   "pricing": {
     "title": "Simple, predictable pricing",
     "subtitle": "No per-seat surprises. Pick the plan that fits your team.",
+    "perMonth": "/month",
     "monthly": "Monthly",
     "annual": "Annual",
-    "save": "Save 20%",
+    "save": "Most popular",
     "faq": {
       "title": "Frequently asked questions",
       "trial": {
@@ -115,6 +172,7 @@
     "post3Excerpt": "Checklists, shadowing, and LeadForge workflows that reduce ramp time."
   },
   "footer": {
+    "tagline": "The focused CRM for growing sales teams — pipeline, follow-up, and quotes in one place.",
     "product": "Product",
     "company": "Company",
     "legal": "Legal",
@@ -129,7 +187,7 @@
   },
   "cta": {
     "title": "Ready to close more deals?",
-    "subtitle": "Join hundreds of sales teams using LeadForge to hit their numbers.",
+    "subtitle": "Give your team one workspace for pipeline control, follow-up discipline, and quoting.",
     "primary": "Start Free Trial",
     "secondary": "Talk to Sales"
   }

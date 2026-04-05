@@ -156,12 +156,7 @@ export default async function ReportsPage({ params }: { params: Promise<{ locale
       </div>
 
       {/* Charts */}
-      <ReportsCharts
-        leadsBySource={leadsBySource}
-        pipelineByStage={pipelineByStage}
-        forecast={forecast}
-        t={t}
-      />
+      <ReportsCharts leadsBySource={leadsBySource} pipelineByStage={pipelineByStage} forecast={forecast} />
     </div>
   )
 }
